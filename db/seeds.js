@@ -30,10 +30,10 @@ User
   passwordConfirmation: 'password',
   description: ''
 }, {
-  username: '',
-  email: '',
-  password: '',
-  passwordConfirmation: '',
+  username: 'j-man',
+  email: 'jasontrk@hotmail.co.uk',
+  password: 'password',
+  passwordConfirmation: 'password',
   description: ''
 }, {
   username: '',
@@ -52,19 +52,19 @@ User
   console.log(`${users.length} users created`);
   return Product
   .create([{
-    name: '',
-    category: '',
-    price: '',
-    quantity: '',
-    image: '',
-    description: '',
-    createdBy: users[0]
+    name: 'Red Mudcloth Pillow',
+    category: 'Home & Living',
+    price: '75',
+    quantity: '5',
+    image: '#',
+    description: 'Crafted from recycled African fabrics, this mudcloth pillow is handmade in my studio in Los Angeles. Each pillow is unique looking due to the nature of the fabric and comes with a pillow insert. Quantity is very limited.',
+    createdBy: users[1]
   },{
-    name: '',
-    category: '',
-    price: '',
-    quantity: '',
-    image: '',
+    name: 'Jasper Earrings',
+    category: 'Fashion',
+    price: '200',
+    quantity: '1',
+    image: '#',
     description: '',
     createdBy: users[0]
   }]);
