@@ -1,113 +1,302 @@
-{
-name: 'Human Skull Replica',
-category: 'Art & Collectibles',
-price: '23.00',
-quantity: '5',
-image: 'human-skull-replica'
-description: 'Realistic human skull replica, full size, made from plaster of Paris and painted for an aged, weathered appearance. The original and best selling Vicious Noodles skull, hundreds sold to satisfied customers. This item is hand-cast and hand-painted and is therefore a unique piece which will vary slightly in appearance from the photograph - the pictures give a close representation of the item you will receive.',
-createdBy:
+
+const mongoose = require('mongoose');
+const { dbURI } = require('../config/environment');
+mongoose.Promise = require('bluebird');
+mongoose.connect(dbURI);
+
+const User = require('../models/user');
+const Product = require('../models/product');
+
+
+User.collection.drop();
+Product.collection.drop();
+
+User
+.create([{
+  username: 'origamiChick',
+  email: 'alexandriako@yahoo.com',
+  password: '123',
+  passwordConfirmation: '123',
+  description: 'Born in LA and raised in Tokyo, I am an avid collector of vintage jewelry and handmade pieces. On the side I like to peruse for hidden gems at thrift stores. Recently my partner and I launched our own fashion label.'
 },{
-name: 'Pokemon Terrarium Pokeball',
-category: 'Art & Collectibles',
-price: '29.99',
-quantity: '10',
-image: 'pokemon-terrarium-pokeball'
-description: 'Pikachu pokemon terrarium. Size: The diameter is 3.93in (100mm). The balls will be sealed and do not require any maintenance and are great to have on a desk, at work, or at home.',
-createdBy:
-},{
-name: 'Skyrim Ebony Dagger',
-category: 'Art & Collectibles',
-price: '35.00',
-quantity: '8',
-image: 'skyrim-ebony-dagger'
-description: 'Wooden replica of the Ebony Dagger from Skyrim video game. This is an awesome looking item. The replica is made from wood so it is very lightweight making it perfect for cosplay and carying around conventions. The paint detail makes it look like metal. A great gift for any cosplay enthusiast or elder scrolls fan.',
-createdBy: []
-},{
-name: 'Scorpion Metal Sculpture',
-category: 'Art & Collectibles',
-price: '295.00',
-quantity: '3',
-image: 'scorpion-metal-sculpture'
-description: 'Scrap metal Scorpion sculpture. Made with a selection of waste metal and then welded together. They are approximately 11.5" long, 6.5" high and weigh approximately 1.7kg. I can make them to order from the same design but each sculpture will be unique due to the materials used. This sculpture is probably not suitable for children. The sting and the pincers are sharp!',
-createdBy:
-},{
-name: 'Stormtrooper Helmet',
-category: 'Art & Collectibles',
-price: '150.00',
-quantity: '5',
-image: 'stormtrooper-helmet'
-description: 'Fully wearable stormtrooper helmet hand painted and weathered by Custom Collectables. Comes with voice changer, adjustable head strap and helmet stand. If you want a particular colour finish or weathering material, please send me a message so we can arrange your boutique item.',
-createdBy:
-},{
-name: 'Muhammad Ali Print',
-category: 'Art & Collectibles',
-price: '30.00',
-quantity: '20',
-image: 'muhammad_ali_print'
-description: 'Muhammed Ali "I am the Greatest" print. Includes black frame with white mount.',
-createdBy:
-},{
-name: 'Orgone Pyramid',
-category: 'Art & Collectibles',
-price: '127.99',
-quantity: '5',
-image: ''
-description: 'This orgone pyramid is hand-made with loving intent. Everything is charged in the sunlight before encasing it in resin for maximum benefit. After it was made it was charged in the megalithic stone circle in lough Gur, Limerick, Ireland. It also sits on an orgone charging plate before posting. So it is full of spiritual and energetic energies. It contains chipped red carnelian gemstones, chipped gemstones, chipped sunstone gemstones, black tourmaline, moonstone tumblestones, gold flakes, terminated quartz crystal wrapped in copper wire, brass metal powder, copper metal shavings, brass metal shavings',
-createdBy:
-},{
-name: '5-tube IN14 Nixie clock',
-category: 'Entertainment',
-price: '130.50',
-quantity: '7',
-image: 'nixie-clock'
-description: 'Nixie Clock Features: All interaction using IR proximity sensors - no buttons or remotes. Provision for GPS time sync input 2400/4800/9600BPS. Data link can chain up to 3 clocks together into a single display. Single alarm. Display dim on/off settings. Time calibration. Individual tube brightness calibration. Ticking seconds. Low power, less than 2W and can be powered from a standard USB port. Approx. 80x145mm and 70mm high to the top of the tubes.',
-createdBy:
-},{
-name: 'Arduino LED Tetris Table',
-category: 'Entertainment',
-price: '175.05',
-quantity: '12',
-image: 'led-tetris-table'
-description: 'Arduino LED coffee table, with tetris game, beautiful bright LED illumination and cool random animations. This is a fully functional gaming console and cool coffee table. You can connect gamepad and play in retro game tetris or snake. You can use the table as a night light. Table size width: 55cm, length: 55cm, height: 45cm.',
-createdBy:
-},{
-name: 'Vintage Sony Stereo 8 Track Cartridge Recorder Model TC-8 ',
-category: 'Entertainment',
-price: '47.75',
-quantity: '1',
-image: 'sony-stereo-recorder'
-description: 'Sony Tapecorder TC-8 Stereo 8 Cartidge Recorder and 17 8-Tracks! Features include: Portable Built In Handle, Stereo Line Out, Stereo Auxillary In, Stereo Mic In, Plays & Records in Stereo',
-createdBy:
-},{
-name: 'VINTAGE mint Polaroid Sx-70 Land Camera',
-category: 'Entertainment',
-price: '151.51',
-quantity: '1',
-image: 'poloroid-camera'
-description: 'VINTAGE mint Polaroid Sx-70 Land Camera with tan leather body. It\'s in great condition! Bellows are in perfect condition and the glass is flawless',
-createdBy:
-},{
-name: 'Game Boy (built-in Hard Drive USB 3.0)',
-category: 'Entertainment',
-price: '87.50',
-quantity '5',
-image: 'gameboy'
-description: 'Go ultra portable and ultra geeky with this Game Boy handheld video game system, which has been recycled into a USB3 hard drive. This price is for a 1TB Drive.',
-createdBy:
-},{
-name: 'Steampunk Green Computer Mouse (USB)',
-category: 'Entertainment',
-price: '45.20',
-quantity: '5',
-image: 'steampunk-mouse'
-description: 'Armorhamster - custom modding computer mouse with armor, gears, rivets and mechanisms imitation at steampunk style. The mouse has a laser sensor with a change of resolution 600/1000/1600 dpi and additional navigation keys. On the back of the mouse located a window with a green light.',
-createdBy:
-},{
-name: 'Sega Megadrive (includes 16 games)',
-category: 'Entertainment',
-price: '132.00',
-quantity: '1',
-image: 'sega-megadrive'
-description: 'Console game Sega Megadrive with cables, controllers, 1 pad and 16 vintage games. Warning, this console is in Zone Europe. The games are in french. Good condition. Works perfectly. Tested before placing the ad online. One of the two levers has the open connector, but works perfectly.',
-createdBy:
-},{
+  username: 'alexandriako',
+  email: 'alexandriamhko@gmail.com',
+  password: '123',
+  passwordConfirmation: '123',
+  description: 'Having graduated in graphic design, I currently dabble in graphic design, tattoo designs, and prints. My other passion is for furniture and interior design.'
+}
+, {
+  username: 'lunchbox',
+  email: 'jasontrk12@gmail.com',
+  password: 'password',
+  passwordConfirmation: 'password',
+  description: ''
+}, {
+  username: 'j-man',
+  email: 'jasontrk@hotmail.co.uk',
+  password: 'password',
+  passwordConfirmation: 'password',
+  description: ''
+}, {
+  username: 'mikedg',
+  email: 'mike@mike',
+  password: 'password',
+  passwordConfirmation: 'password',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+}, {
+  username: 'jack',
+  email: 'jack@jack',
+  password: 'password',
+  passwordConfirmation: 'password',
+  description: ''
+}
+])
+.then((users) => {
+  console.log(`${users.length} users created`);
+  return Product
+  .create([{
+    name: 'Rattle Bumble Bees Toy',
+    category: 'Kids',
+    price: 1300,
+    quantity: 12,
+    image: 'rattle-bumble-beestoy.jpg',
+    description: 'Realistic, Soft and Cuddly making a perfect all in one soother, calmer and toy for your little ones.A set of 3 x handmade with safety eyes , colourfull and realistic bumble bees rattle which can be hung anywhere around your baby, be it indoors on cots, swingers, chairs, bed or even outdoors on babies pram, pushchair or car seat keeping your little ones amused, soothed and interested.....A fantastic must have investment.',
+    createdBy: users[0]
+  },{
+    name: 'Turtle Baby Rattle Toy',
+    category: 'Kids',
+    price: 400,
+    quantity: 14,
+    image: 'turtle-baby-rattle-toy.jpg',
+    description: 'This beautiful handmade colourful and realistic turtle rattle toy is made from 100 % cotton organic and includes high quality bpa free teething circle chain , which can be hung anywhere around your baby, be it indoors on cots, swingers, chairs, bed or even outdoors on babies pram, pushchair or car seat ultimately keeping your little ones quiet, amused, soothed and interested.....An essential must have investment.',
+    createdBy: users[0]
+  }, {
+    name: 'Organic Baby Teething Toy',
+    category: 'Kids',
+    price: 1400,
+    quantity: 3,
+    image: 'organic-baby-teething-toy.jpg',
+    description: 'Handmade from hard wood then finished with beeswax and olive oil, this teething ring features a perfectly pink floral design in organic cotton jersey. The teether is lined with organic cotton plush which is so soft and super absorbent. ',
+    createdBy: users[0]
+  }, {
+    name: 'Dinosaur taggy toy',
+    category: 'Kids',
+    price: 1700,
+    quantity: 50,
+    image: 'dinosaur-taggy-toy.jpg',
+    description: 'One for the baby palaeontologists out there, meet our Diplotagus dinosaur toy. This plush dinosaur is a taggy toy. ‘Diplotagus’ has been lovingly created using a baby blue plush fabric. The toy has ribbons firmly stitched on, forming the taggy spikes of this cuddly,prehistoric addition to our collection. The ribbons have been carefully selected to compliment the colours in the plush fabric. The ribbons are all short loops to ensure there is no risk of choking.',
+    createdBy: users[0]
+  }, {
+    name: 'ALFIE -Wooden Rabbit Stacking Puzzle',
+    category: 'Kids',
+    price: 2500,
+    quantity: 10,
+    image: 'wooden-rabbit-stacking-puzzle.jpg',
+    description: 'Lovely gift idea for boys and girls.An organic, eco-friendly. Made from raw beech wood which makes him a delight to touch. The toy has been lovingly handcrafted using sustainable wood and non toxic finishes so completely safe for your child.',
+    createdBy: users[0]
+  },
+  {
+    name: 'Soft sole french bulldog baby shoes',
+    category: 'Kids',
+    price: 1000,
+    quantity: 3,
+    image: 'soft-sole-french-bulldog-baby-shoes.jpg',
+    description: 'This shoe is fully lined with fleece and all seams are concealed within the shoe making it more comfortable for baby to wear.The soles are a soft durable faux suede. ',
+    createdBy: users[0]
+  },{
+    name: 'Nursery Decor- Toy Camera',
+    category: 'Kids',
+    price: 3000,
+    quantity: 30,
+    image: 'nursery-decor--toy-camera.jpg',
+    description: 'Wooden camera sculpture/ toy & 3 wooden cloud baby blocks. Carefully painted & sealed with a gloss sealer.',
+    createdBy: users[0]
+  },{
+    name: 'Mind The Gap self striping sock yarn',
+    category: 'Crafts',
+    price: 2500,
+    quantity: 10,
+    image: 'mind-the-gap-self-striping-sock-yarn.jpg',
+    description: 'This is a self striping sock yarn, which means it will pattern into bold, colourful stripes as you knit. Each stripe will be approximately six rows wide (12mm, half an inch) depending on your gauge and the number of stitches you cast on. The sequence of colours will vary between dye lots, and will not necessarily be in the same order as the sock in the photograph.',
+    createdBy: users[0]
+  }, {
+    name: 'Knitting Kit: Beginners Super Chunky Fox ',
+    category: 'Crafts',
+    price: 800,
+    quantity: 2,
+    image: 'knitting-kit-beginners-super-chunky-fox.jpg',
+    description: 'If you\'re crafty and love foxes then this is the project for you! It\'s a great kit for beginners or a hat that can be made up in just an evening by a more experienced knitter - I can make one in an hour!',
+    createdBy: users[0]
+  },{
+    name: 'Knitting Kit:Faux ',
+    category: 'Crafts',
+    price: 600,
+    quantity: 2,
+    image: 'knitting-kit-faux.jpg',
+    description: 'If you\'re crafty and love bears then this is the project for you! It\'s a great kit for beginners or a scarf that can be made up in just an evening by a more experienced knitter.The scarf is knitted up using just the knit stitch, or \'garter\' stitch (knitting every row). The pattern includes a \'beginners\' and \'experienced\' version, both are exactly the same, however the beginners features tips to help with each part of the pattern.',
+    createdBy: users[0]
+  }, {
+    name: 'Golden Gate Bridge, paper model kit',
+    category: 'Crafts',
+    price: 600,
+    quantity: 100,
+    image: 'golden-gate-bridge-paper-model-kit.jpg',
+    description: 'This beautiful suspension bridge is a beloved symbol of San Francisco. You can build your own Golden Gate bridge with this kit, following detailed step-by-step setup diagrams and instructions in English, German or Latvian. Now it\'s your turn time to play engineering!',
+    createdBy: users[0]
+  }, {
+    name: 'Rice decoupage paper',
+    category: 'Crafts',
+    price: 200,
+    quantity: 90,
+    image: 'rice-decoupage-paper.jpg',
+    description: 'Decoupage rice paper size 297 * 210mm (8.27 inches * 11.69 inches). Print the map in the high-end thin (about 30g density) of rice paper. Unlike mulberry paper, this paper no streaks and foreign inclusions, our paper has a uniform structure, which is very important if you want to get a flat and neat surface of the product. Paper is very convenient and practical to use - it does not tear or bubbles during application.',
+    createdBy: users[0]
+  }, {
+    name: 'Bee mini sketchbook',
+    category: 'Crafts',
+    price: 500,
+    quantity: 43,
+    image: 'bee-mini-sketchbook.jpg',
+    description: 'This handmade wire bound notebook is perfect for sketching, writing poems, scrapbooking, travel journalling and any other creative activities. The journal in A6 size contains 25 blank BROWN sheets of eco friendly recycled paper in 250gsm weight and 5 inserted pages of various gorgeous silk pressed and patterned paper.',
+    createdBy: users[0]
+  }, {
+    name: 'Swim Fabric: Paradise Pineapple ',
+    category: 'Crafts',
+    price: 50,
+    quantity: 200,
+    image: 'swim-fabric-paradise-pineapple .jpg',
+    description: 'Sold by the 1/2 yard. For 1 yard choose a quantity of "2". Your order will be cut continuously.Tossed pineapples on black and white striped UV 50+ swimsuit fabric. Chlorine and saltwater resistant.',
+    createdBy: users[0]
+  }, {
+    name: 'Red Mudcloth Pillow',
+    category: 'Home & Living',
+    price: '75',
+    quantity: '5',
+    image: 'https://www.juliancharles.co.uk/julian-charles-hotel-luxe-pillows-medium-support-pair?utm_source=google_shopping&gclid=Cj0KEQjw7dfKBRCdkKrvmfKtyeoBEiQAch0egXcmbu-xtDAAvpmFpSyGrWjszVJ_KXqupL3-ZpaEugYaAmjp8P8HAQ',
+    description: 'Crafted from recycled African fabrics, this mudcloth pillow is handmade in my studio in Los Angeles. Each pillow is unique looking due to the nature of the fabric and comes with a pillow insert. Quantity is very limited.',
+    createdBy: users[1]
+  },{
+    name: 'Jasper Earrings',
+    category: 'Fashion',
+    price: '200',
+    quantity: '1',
+    image: 'https://www.juliancharles.co.uk/julian-charles-hotel-luxe-pillows-medium-support-pair?utm_source=google_shopping&gclid=Cj0KEQjw7dfKBRCdkKrvmfKtyeoBEiQAch0egXcmbu-xtDAAvpmFpSyGrWjszVJ_KXqupL3-ZpaEugYaAmjp8P8HAQ',
+    description: 'One of a kind earrings.',
+    createdBy: users[0]
+  },{
+    name: 'Human Skull Replica',
+    category: 'Art & Collectibles',
+    price: '23.00',
+    quantity: '5',
+    image: 'human-skull-replica.jpg',
+    description: 'Realistic human skull replica, full size, made from plaster of Paris and painted for an aged, weathered appearance. The original and best selling Vicious Noodles skull, hundreds sold to satisfied customers. This item is hand-cast and hand-painted and is therefore a unique piece which will vary slightly in appearance from the photograph - the pictures give a close representation of the item you will receive.',
+    createdBy: users[2]
+  },{
+    name: 'Pokemon Terrarium Pokeball',
+    category: 'Art & Collectibles',
+    price: '29.99',
+    quantity: '10',
+    image: 'pokemon-terrarium-pokeball.jpg',
+    description: 'Pikachu pokemon terrarium. Size: The diameter is 3.93in (100mm). The balls will be sealed and do not require any maintenance and are great to have on a desk, at work, or at home.',
+    createdBy: users[2]
+  },{
+    name: 'Skyrim Ebony Dagger',
+    category: 'Art & Collectibles',
+    price: '35.00',
+    quantity: '8',
+    image: 'skyrim-ebony-dagger.jpg',
+    description: 'Wooden replica of the Ebony Dagger from Skyrim video game. This is an awesome looking item. The replica is made from wood so it is very lightweight making it perfect for cosplay and carying around conventions. The paint detail makes it look like metal. A great gift for any cosplay enthusiast or elder scrolls fan.',
+    createdBy: users[3]
+  },{
+    name: 'Scorpion Metal Sculpture',
+    category: 'Art & Collectibles',
+    price: '295.00',
+    quantity: '3',
+    image: 'scorpion-metal-sculpture.jpg',
+    description: 'Scrap metal Scorpion sculpture. Made with a selection of waste metal and then welded together. They are approximately 11.5" long, 6.5" high and weigh approximately 1.7kg. I can make them to order from the same design but each sculpture will be unique due to the materials used. This sculpture is probably not suitable for children. The sting and the pincers are sharp!',
+    createdBy: users[3]
+  },{
+    name: 'Stormtrooper Helmet',
+    category: 'Art & Collectibles',
+    price: '150.00',
+    quantity: '5',
+    image: 'stormtrooper-helmet.jpg',
+    description: 'Fully wearable stormtrooper helmet hand painted and weathered by Custom Collectables. Comes with voice changer, adjustable head strap and helmet stand. If you want a particular colour finish or weathering material, please send me a message so we can arrange your boutique item.',
+    createdBy: users[5]
+  },{
+    name: 'Muhammad Ali Print',
+    category: 'Art & Collectibles',
+    price: '30.00',
+    quantity: '20',
+    image: 'muhammad_ali_print.jpg',
+    description: 'Muhammed Ali "I am the Greatest" print. Includes black frame with white mount.',
+    createdBy: users[5]
+  },{
+    name: 'Orgone Pyramid',
+    category: 'Art & Collectibles',
+    price: '127.99',
+    quantity: '5',
+    image: 'orgone-pyramid.jpg',
+    description: 'This orgone pyramid is hand-made with loving intent. Everything is charged in the sunlight before encasing it in resin for maximum benefit. After it was made it was charged in the megalithic stone circle in lough Gur, Limerick, Ireland. It also sits on an orgone charging plate before posting. So it is full of spiritual and energetic energies. It contains chipped red carnelian gemstones, chipped gemstones, chipped sunstone gemstones, black tourmaline, moonstone tumblestones, gold flakes, terminated quartz crystal wrapped in copper wire, brass metal powder, copper metal shavings, brass metal shavings',
+    createdBy: users[3]
+  },{
+    name: '5-tube IN14 Nixie clock',
+    category: 'Entertainment',
+    price: '130.50',
+    quantity: '7',
+    image: 'nixie-clock.jpg',
+    description: 'Nixie Clock Features: All interaction using IR proximity sensors - no buttons or remotes. Provision for GPS time sync input 2400/4800/9600BPS. Data link can chain up to 3 clocks together into a single display. Single alarm. Display dim on/off settings. Time calibration. Individual tube brightness calibration. Ticking seconds. Low power, less than 2W and can be powered from a standard USB port. Approx. 80x145mm and 70mm high to the top of the tubes.',
+    createdBy: users[2]
+  },{
+    name: 'Arduino LED Tetris Table',
+    category: 'Entertainment',
+    price: '175.05',
+    quantity: '12',
+    image: 'led-tetris-table.jpg',
+    description: 'Arduino LED coffee table, with tetris game, beautiful bright LED illumination and cool random animations. This is a fully functional gaming console and cool coffee table. You can connect gamepad and play in retro game tetris or snake. You can use the table as a night light. Table size width: 55cm, length: 55cm, height: 45cm.',
+    createdBy: users[5]
+  },{
+    name: 'Vintage Sony Stereo 8 Track Cartridge Recorder Model TC-8 ',
+    category: 'Entertainment',
+    price: '47.75',
+    quantity: '1',
+    image: 'sony-stereo-recorder.jpg',
+    description: 'Sony Tapecorder TC-8 Stereo 8 Cartidge Recorder and 17 8-Tracks! Features include: Portable Built In Handle, Stereo Line Out, Stereo Auxillary In, Stereo Mic In, Plays & Records in Stereo',
+    createdBy: users[3]
+  },{
+    name: 'VINTAGE mint Polaroid Sx-70 Land Camera',
+    category: 'Entertainment',
+    price: '151.51',
+    quantity: '1',
+    image: 'poloroid-camera.jpg',
+    description: 'VINTAGE mint Polaroid Sx-70 Land Camera with tan leather body. It\'s in great condition! Bellows are in perfect condition and the glass is flawless',
+    createdBy: users[3]
+  },{
+    name: 'Game Boy (built-in Hard Drive USB 3.0)',
+    category: 'Entertainment',
+    price: '87.50',
+    quantity: 5,
+    image: 'gameboy.jpg',
+    description: 'Go ultra portable and ultra geeky with this Game Boy handheld video game system, which has been recycled into a USB3 hard drive. This price is for a 1TB Drive.',
+    createdBy: users[5]
+  },{
+    name: 'Steampunk Green Computer Mouse (USB)',
+    category: 'Entertainment',
+    price: '45.20',
+    quantity: '5',
+    image: 'steampunk-mouse.jpg',
+    description: 'Armorhamster - custom modding computer mouse with armor, gears, rivets and mechanisms imitation at steampunk style. The mouse has a laser sensor with a change of resolution 600/1000/1600 dpi and additional navigation keys. On the back of the mouse located a window with a green light.',
+    createdBy: users[5]
+  },{
+    name: 'Sega Megadrive (includes 16 games)',
+    category: 'Entertainment',
+    price: '132.00',
+    quantity: '1',
+    image: 'sega-megadrive.jpg',
+    description: 'Console game Sega Megadrive with cables, controllers, 1 pad and 16 vintage games. Warning, this console is in Zone Europe. The games are in french. Good condition. Works perfectly. Tested before placing the ad online. One of the two levers has the open connector, but works perfectly.',
+    createdBy: users[5]
+  }]);
+})
+.then((products) => console.log(`${products.length} products created`))
+.catch((err) => console.log(err))
+.finally(() => mongoose.connection.close());
