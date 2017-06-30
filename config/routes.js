@@ -5,7 +5,7 @@ const products = require('../controllers/products');
 // const secureRoute = require('../lib/secureRoute');
 
 
-router.route('/')
+router.route('/products/index')
   .get(products.index)
   .post(products.create);
 
@@ -24,6 +24,6 @@ router.route('/products/:id')
 // router.route('/login')
 //   .post(auth.login);
 
-router.all('/*', (req, res) => res.notFound());
+
 
 module.exports = router;
