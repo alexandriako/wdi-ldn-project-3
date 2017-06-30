@@ -23,7 +23,8 @@ User
   password: '123',
   passwordConfirmation: '123',
   description: 'Having graduated in graphic design, I currently dabble in graphic design, tattoo designs, and prints. My other passion is for furniture and interior design.'
-}, {
+}
+, {
   username: 'lunchbox',
   email: 'jasontrk12@gmail.com',
   password: 'password',
@@ -47,7 +48,8 @@ User
   password: '',
   passwordConfirmation: '',
   description: ''
-}])
+}
+])
 .then((users) => {
   console.log(`${users.length} users created`);
   return Product
@@ -56,7 +58,7 @@ User
     category: 'Home & Living',
     price: '75',
     quantity: '5',
-    image: '#',
+    image: 'https://www.juliancharles.co.uk/julian-charles-hotel-luxe-pillows-medium-support-pair?utm_source=google_shopping&gclid=Cj0KEQjw7dfKBRCdkKrvmfKtyeoBEiQAch0egXcmbu-xtDAAvpmFpSyGrWjszVJ_KXqupL3-ZpaEugYaAmjp8P8HAQ',
     description: 'Crafted from recycled African fabrics, this mudcloth pillow is handmade in my studio in Los Angeles. Each pillow is unique looking due to the nature of the fabric and comes with a pillow insert. Quantity is very limited.',
     createdBy: users[1]
   },{
@@ -64,10 +66,11 @@ User
     category: 'Fashion',
     price: '200',
     quantity: '1',
-    image: '#',
-    description: '',
+    image: 'https://www.juliancharles.co.uk/julian-charles-hotel-luxe-pillows-medium-support-pair?utm_source=google_shopping&gclid=Cj0KEQjw7dfKBRCdkKrvmfKtyeoBEiQAch0egXcmbu-xtDAAvpmFpSyGrWjszVJ_KXqupL3-ZpaEugYaAmjp8P8HAQ',
+    description: 'One of a kind earrings.',
     createdBy: users[0]
-  }]);
+  }
+  ]);
 })
 .then((products) => console.log(`${products.length} products created`))
 .catch((err) => console.log(err))
