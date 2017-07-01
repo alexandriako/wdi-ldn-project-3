@@ -51,6 +51,7 @@
     }
   },
   "dependencies": {
+    "angular-stripe": "^5.0.0",
     "bcrypt": "^1.0.2",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
@@ -59,6 +60,7 @@
     "mongoose": "^4.11.0",
     "morgan": "^1.8.2",
     "request-promise": "^4.2.1",
+    "stripe": "^4.23.1",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
