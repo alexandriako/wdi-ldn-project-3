@@ -2,4 +2,4 @@
 console.log('Hot damn!');
 
 angular
-  .module('wabisabiApp', []);
+  .module('wabisabiApp', ['ui.router', 'ngResource']);

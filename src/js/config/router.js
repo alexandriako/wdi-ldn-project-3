@@ -7,9 +7,9 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'js/views/static/home.html'
+    .state('productsIndex', {
+      url: '/products',
+      templateUrl: 'js/views/products/index.html'
     });
   $urlRouterProvider.otherwise('/');
 }
