@@ -7,11 +7,11 @@ angular
 .controller('ProductsDeleteCtrl', ProductsDeleteCtrl);
 
 
-ProductsIndexCtrl.$inject['Product'];
+ProductsIndexCtrl.$inject = ['Product'];
 function ProductsIndexCtrl(Product) {
-//   // const vm = this;
+  const vm = this;
+  vm.all = Product.query();
   console.log(Product);
-//   // vm.all = Product.query();
 }
 
 

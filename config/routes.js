@@ -5,7 +5,7 @@ const users = require('../controllers/user');
 // const secureRoute = require('../lib/secureRoute');
 
 
-router.route('/products/index')
+router.route('/products')
 .get(products.index)
 .post(products.create);
 
@@ -15,7 +15,7 @@ router.route('/products/:id')
 .put(products.update)
 .delete(products.delete);
 
-router.route('/user/index')
+router.route('/user')
 .get(users.index);
 
 router.route('/user/:id')
