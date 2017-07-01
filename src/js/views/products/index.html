@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+<div>
+  <div ng-repeat="product in productsIndex.all">
+    <img ng-src="{{ product.image }}">
+    <h2>{{ product.name }}</h2>
+    <p><strong>{{ product.price }}</strong></p>
+    <p>{{ product.category }}</p>
+  </div>
+</div>

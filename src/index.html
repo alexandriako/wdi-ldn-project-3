@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="wabisabiApp">
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <title>Wabi Sabi</title>
     <!-- inject:js -->
@@ -8,9 +9,12 @@
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body ng-controller="MainCtrl as main">
+  <body>
 
-    <main ui-view class="container"></main>
+    <div class="container">
+    <div class="alert alert-info" ng-if="main.message">{{ main.message }}</div>
+    <main ui-view></main>
+  </div>
 
   </body>
 </html>
