@@ -1,5 +1,5 @@
 angular
-  .module('birdApp')
+  .module('wabisabiApp')
   .factory('ErrorHandler', ErrorHandler);
 
 ErrorHandler.$inject = ['$rootScope'];
