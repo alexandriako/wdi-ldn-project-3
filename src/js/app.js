@@ -2,4 +2,4 @@
 console.log('Hot damn!');
 
 angular
-  .module('wabisabiApp', ['ui.router', 'ngResource']);
+  .module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer']);
