@@ -7,10 +7,11 @@ angular
 .controller('ProductsDeleteCtrl', ProductsDeleteCtrl);
 
 
-ProductsIndexCtrl.$inject['Product'];
+ProductsIndexCtrl.$inject = ['Product'];
 function ProductsIndexCtrl(Product) {
   const vm = this;
   vm.all = Product.query();
+  console.log(Product);
 }
 
 
@@ -37,16 +38,8 @@ function ProductsShowCtrl(Product, $stateParams, $state, $uibModal, $http) {
   .$promise
   .then((product) => {
     vm.product = product;
-    getCountryData(vm.product.origin);
   });
 
-  function getCountryData(origin){
-    console.log(origin);
-    $http.get(`https://restcountries.eu/rest/v2/name/${origin}`)
-    .then((response) => {
-      console.log(response);
-    });
-  }
 
   function openModal() {
     $uibModal.open({
@@ -75,7 +68,7 @@ function ProductsEditCtrl(Product, $stateParams, $state) {
     .$update()
     .then(() => $state.go('productsShow', $stateParams));
   }
-  
+
   vm.update = productsUpdate;
 }
 

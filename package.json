@@ -51,7 +51,11 @@
     }
   },
   "dependencies": {
+<<<<<<< HEAD
     "angular-stripe": "^5.0.0",
+=======
+    "angular": "^1.6.4",
+>>>>>>> 185535c91cfb6e069288a06fb2e1bc7b40ff066e
     "bcrypt": "^1.0.2",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
