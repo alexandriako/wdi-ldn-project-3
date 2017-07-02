@@ -2,8 +2,8 @@
 console.log('Hot damn!');
 
 angular
-  .module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer', 'ui.bootstrap', 'ngAnimate']);
-  // .constant('API_URL', 'http://localhost:3000')
-  // .config(function() {
-  //   Stripe.setPublishableKey('pk_test_ULwvAlGf5PSFbkLqX9gQN8sA');
-  // });
+  .module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer', 'ui.bootstrap', 'ngAnimate'])
+  .constant('API_URL', 'http://localhost:7000')
+  .config(function() {
+    Stripe.setPublishableKey('pk_test_ULwvAlGf5PSFbkLqX9gQN8sA');
+  });
