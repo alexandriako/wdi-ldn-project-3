@@ -1,21 +1,23 @@
-const morgan = require('morgan');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const express     = require('express');
-const app         = express();
-const routes = require('./config/routes');
-var cors = require('cors');
-var stripe = require('stripe')('sk_test_CTZ2JQpQsS5LHPLTWutqqyeq');
+const morgan          = require('morgan');
+const mongoose        = require('mongoose');
+mongoose.plugin(require('./lib/globalToJSON'));
+mongoose.Promise      = require('bluebird');
+const bodyParser      = require('body-parser');
+const express         = require('express');
+const app             = express();
+const routes          = require('./config/routes');
+
+var cors              = require('cors');
+var stripe            = require('stripe')('sk_test_CTZ2JQpQsS5LHPLTWutqqyeq');
 const { port, env, dbURI }    = require('./config/environment');
 
-mongoose.Promise = require('bluebird');
 mongoose.connect(dbURI);
-app.use(bodyParser.json());
 
+
+app.use(bodyParser.json());
 app.use(cors({
   origin: 'http://localhost:7000'
 }));
-
 app.post('/payment', function(req, res) {
   var token = req.body.token;
   console.log(charge);
@@ -34,6 +36,7 @@ app.post('/payment', function(req, res) {
     res.status(200).json({ message: 'Payment successful' });
   });
 });
+
 
 app.use(express.static(`${__dirname}/public`));
 if('test' !== env) app.use(morgan('dev'));

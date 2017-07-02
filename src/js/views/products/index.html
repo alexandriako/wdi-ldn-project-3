@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <div class="row">
   <div ng-repeat="product in productsIndex.all" class="col-lg-4 col-md-6 col-sm-12">
-    <div class="image"><a ui-sref="productsShow({ id: product._id })"><img ng-src="{{ product.image }}" class="img-responsive"></a></div>
+    <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.image }}" class="img-responsive"></a></div>
     <h2>{{ product.name }}</h2>
     <p><strong>{{ product.price }}</strong></p>
     <p>{{ product.category }}</p>
