@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <div class="show">
   <img src="{{productsShow.product.image }}">
+  <h4>{{ productsShow.product.category }}</h4>
   <h2>{{ productsShow.product.name }}</h2>
-  <h5> £{{ productsShow.product.price }}</h5>
+  <h3>{{ productsShow.product.createdBy }}</h3>
+  <h3> £{{ productsShow.product.price }}</h3>
   <p> {{ productsShow.product.description }} </p>
 </div>
 <div ng-controller="cartCtrl">
@@ -38,6 +40,6 @@
       This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
     </mark>
   </div>
-  </script>
+</script>
 
 </div>
