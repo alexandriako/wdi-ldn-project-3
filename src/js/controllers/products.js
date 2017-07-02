@@ -31,7 +31,7 @@ function ProductsNewCtrl(Product, $state) {
 }
 
 ProductsShowCtrl.$inject = ['Product', '$stateParams', '$state', '$uibModal', '$http'];
-function ProductsShowCtrl(Product, $stateParams, $state, $uibModal, $http) {
+function ProductsShowCtrl(Product, $stateParams, $state, $uibModal) {
   const vm = this;
 
   Product.get($stateParams)

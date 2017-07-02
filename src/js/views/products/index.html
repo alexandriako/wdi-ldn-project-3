@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<h1>Products Index!!!</h1>
-<div>
-  {{ 2 + 2 }}
-  <div ng-repeat="product in productsIndex.all">
-    <img ng-src="{{ product.image }}">
+<div class="row">
+  <div ng-repeat="product in productsIndex.all" class="col-sm-6">
+    <img ng-src="{{ product.image }}" class="img-responsive">
     <h2>{{ product.name }}</h2>
     <p><strong>{{ product.price }}</strong></p>
     <p>{{ product.category }}</p>

@@ -36,6 +36,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/register',
     templateUrl: 'js/views/auth/register.html',
     controller: 'RegisterCtrl as register'
+  })
+  .state('checkout', {
+    url: '/checkout',
+    templateUrl: 'js/views/stripe/index.html',
+    controller: 'StripeCtrl as checkout'
   });
   $urlRouterProvider.otherwise('/products');
 }
