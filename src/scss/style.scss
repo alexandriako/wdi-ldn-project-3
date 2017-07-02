@@ -1,1 +1,33 @@
 // Import all of your scss files here
+@font-face {
+  font-family: 'Aqua';
+  src: url('../fonts/aqua.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Karla', sans-serif;
+}
+
+.navbar {
+  background-color: white;
+  .navbar-brand {
+    font-family: 'Aqua';
+    font-size: 28px;
+  }
+  ul {
+    font-size: 16px;
+  }
+}
+
+.col-lg-4 {
+  .image {
+    margin: 10px 20px;
+    padding: 10px auto;
+    text-align: center;
+    img {
+      width: 500px;
+    }
+  }
+}
