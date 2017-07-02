@@ -1,2 +1,25 @@
 <!DOCTYPE html>
-<h1>Product New!!</h1>
+
+<div class="new">
+  <div>
+    <h2>New Post</h2>
+    <form name="productsNew.newForm" ng-submit="productsNew.create()" novalidate>
+      <div>
+        <label for="image">Image</label>
+        <input base64 type="file" name="base64" id="image" ng-model="productsNew.product.base64" required>
+        <div ng-messages="productsNew.newForm.base64.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.base64.$touched) && productsNew.newForm.base64.$invalid" class="error">
+          <div ng-message="required">Image is required.</div>
+        </div>
+      </div>
+      <div>
+        <label for="caption">Caption</label>
+        <input type="text" name="caption" id="caption" ng-model="productsNew.product.caption" required>
+        <div ng-messages="productsNew.newForm.caption.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.caption.$touched) && productsNew.newForm.caption.$invalid" class="error">
+          <div ng-message="required">Caption is required.</div>
+        </div>
+      </div>
+
+      <button class="button">Create</button>
+    </form>
+  </div>
+</div>

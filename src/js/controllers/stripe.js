@@ -1,9 +1,9 @@
 // angular
 //   .module('wabisabiApp')
-//   .controller('StripeController', StripeController);
+//   .controller('StripeCtrl', StripeCtrl);
 //
-// StripeController.$inject = ['$http', 'Stripe'];
-// function StripeController($http, Stripe) {
+// StripeCtrl.$inject = ['$http', 'Stripe'];
+// function StripeCtrl($http, Stripe) {
 //   var self = this;
 //
 //   self.card = {};
