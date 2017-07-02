@@ -6,6 +6,8 @@ const bodyParser      = require('body-parser');
 const express         = require('express');
 const app             = express();
 const routes          = require('./config/routes');
+const customResponses = require('./lib/customResponses');
+const errorHandler    = require('./lib/errorHandler');
 
 var cors              = require('cors');
 var stripe            = require('stripe')('sk_test_CTZ2JQpQsS5LHPLTWutqqyeq');
@@ -40,7 +42,10 @@ app.post('/payment', function(req, res) {
 
 app.use(express.static(`${__dirname}/public`));
 if('test' !== env) app.use(morgan('dev'));
+
+app.use(customResponses);
 app.use('/api', routes);
+app.use(errorHandler);
 app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 

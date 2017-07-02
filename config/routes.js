@@ -23,7 +23,7 @@ router.route('/user/:id')
 .put(users.update)
 .delete(users.delete);
 
-
+router.all('/*', (req, res) => res.notFound());
 
 
 module.exports = router;
