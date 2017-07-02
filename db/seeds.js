@@ -100,7 +100,7 @@ User
     category: 'Kids',
     price: 1000,
     quantity: 3,
-    image: 'soft-sole-french-bulldog-baby-shoes.jpg',
+    image: 'french-bulldog-baby-shoes.jpg',
     description: 'This shoe is fully lined with fleece and all seams are concealed within the shoe making it more comfortable for baby to wear.The soles are a soft durable faux suede. ',
     createdBy: users[0]
   },{
@@ -108,7 +108,7 @@ User
     category: 'Kids',
     price: 3000,
     quantity: 30,
-    image: 'nursery-decor--toy-camera.jpg',
+    image: 'nursery-decor-toy-camera.jpg',
     description: 'Wooden camera sculpture/ toy & 3 wooden cloud baby blocks. Carefully painted & sealed with a gloss sealer.',
     createdBy: users[0]
   },{
@@ -132,7 +132,7 @@ User
     category: 'Crafts',
     price: 600,
     quantity: 2,
-    image: 'knitting-kit-faux.jpg',
+    image: 'fox_2_grande.jpg',
     description: 'If you\'re crafty and love bears then this is the project for you! It\'s a great kit for beginners or a scarf that can be made up in just an evening by a more experienced knitter.The scarf is knitted up using just the knit stitch, or \'garter\' stitch (knitting every row). The pattern includes a \'beginners\' and \'experienced\' version, both are exactly the same, however the beginners features tips to help with each part of the pattern.',
     createdBy: users[0]
   }, {
@@ -140,7 +140,7 @@ User
     category: 'Crafts',
     price: 600,
     quantity: 100,
-    image: 'golden-gate-bridge-paper-model-kit.jpg',
+    image: 'golden-gate-paper-model.jpg',
     description: 'This beautiful suspension bridge is a beloved symbol of San Francisco. You can build your own Golden Gate bridge with this kit, following detailed step-by-step setup diagrams and instructions in English, German or Latvian. Now it\'s your turn time to play engineering!',
     createdBy: users[0]
   }, {
@@ -172,7 +172,7 @@ User
     category: 'Home & Living',
     price: '75',
     quantity: '5',
-    image: '',
+    image: 'red-pillow.png',
     description: 'Crafted from recycled African fabrics, this mudcloth pillow is handmade in my studio in Los Angeles. Each pillow is unique looking due to the nature of the fabric and comes with a pillow insert. Quantity is very limited.',
     createdBy: users[1]
   },{
@@ -260,16 +260,16 @@ User
     category: 'Entertainment',
     price: '151.51',
     quantity: '1',
-    image: 'poloroid-camera.jpg',
+    image: 'polaroid-camera.jpg',
     description: 'VINTAGE mint Polaroid Sx-70 Land Camera with tan leather body. It\'s in great condition! Bellows are in perfect condition and the glass is flawless',
     createdBy: users[3]
   },{
     name: 'Game Boy (built-in Hard Drive USB 3.0)',
     category: 'Entertainment',
-    price: '87.50',
+    price: '100',
     quantity: 5,
-    image: 'gameboy.jpg',
-    description: 'Go ultra portable and ultra geeky with this Game Boy handheld video game system, which has been recycled into a USB3 hard drive. This price is for a 1TB Drive.',
+    image: 'gameboy-shogo.jpg',
+    description: 'Go ultra geeky with this Game Boy shogo set, each wood piece carved by hand.',
     createdBy: users[5]
   },{
     name: 'Steampunk Green Computer Mouse (USB)',
@@ -284,7 +284,7 @@ User
     category: 'Entertainment',
     price: '132.00',
     quantity: '1',
-    image: 'sega-megadrive.jpg',
+    image: 'sega-mega.jpg',
     description: 'Console game Sega Megadrive with cables, controllers, 1 pad and 16 vintage games. Warning, this console is in Zone Europe. The games are in french. Good condition. Works perfectly. Tested before placing the ad online. One of the two levers has the open connector, but works perfectly.',
     createdBy: users[5]
   },
@@ -293,7 +293,7 @@ User
     category: 'Fashion',
     price: '200',
     quantity: '1',
-    image: 'https://www.juliancharles.co.uk/julian-charles-hotel-luxe-pillows-medium-support-pair?utm_source=google_shopping&gclid=Cj0KEQjw7dfKBRCdkKrvmfKtyeoBEiQAch0egXcmbu-xtDAAvpmFpSyGrWjszVJ_KXqupL3-ZpaEugYaAmjp8P8HAQ',
+    image: 'green-earrings.jpg',
     description: 'One of a kind earrings.',
     createdBy: users[0]
   },{
@@ -301,7 +301,7 @@ User
     category: 'Fashion',
     price: 250,
     quantity: 10,
-    image: '',
+    image: 'bedazzled-jacket.jpg',
     description: 'A quirky addition to your wardrobe, this jean jacket is hand embroidered and bedazzled. Material is light enough for warm weather. One size fits all!',
     createdBy: users[0]
   },
@@ -310,7 +310,7 @@ User
     category: 'Fashion',
     price: 50,
     quantity: 25,
-    image: '',
+    image: 'rings.jpg',
     description: 'Beautiful collection of rings made of Turquoise and hammered silver. Each ring has an adjustable band. Every stone will look different due to it being handmade.',
     createdBy: users[0]
   },
@@ -319,7 +319,7 @@ User
     category: 'Home & Living',
     price: 82,
     quantity: 10,
-    image: '',
+    image: 'abstract-poster.jpg',
     description: 'A handrawn print of only 5 copies, this piece is limited edition. Materials used include parchment, high grade ink, and paint. It comes unframed.',
     createdBy: users[1]
   },
@@ -328,7 +328,7 @@ User
     category: 'Fashion',
     price: 82,
     quantity: 2,
-    image: '',
+    image: 'nautalis-necklace.png',
     description: 'Perfect for any beach lover. My nautalis necklace is crafted from recycled shells (no critters were killed for this jewelry). The fit is shorter for this necklace as it is close to a choker.',
     createdBy: users[0]
   },
@@ -337,7 +337,7 @@ User
     category: 'Home & Living',
     price: 35,
     quantity: 25,
-    image: '',
+    image: 'love-poster.jpg',
     description: 'Cute poster for the home, with the print "I fell in love here." This poster is printed onto white parchment and comes unframed.',
     createdBy: users[1]
   },
@@ -346,7 +346,7 @@ User
     category: 'Home & Living',
     price: 35,
     quantity: 10,
-    image: '',
+    image: 'indigo-pillow.png',
     description: 'Crafted from recycled African fabrics, this mudcloth pillow is handmade in my studio in Los Angeles. Each pillow is unique looking due to the nature of the fabric and comes with a pillow insert. Quantity is very limited.',
     createdBy: users[1]
   },
@@ -355,7 +355,7 @@ User
     category: 'Fashion',
     price: 500,
     quantity: 5,
-    image: '',
+    image: 'diamond-ring.jpg',
     description: 'Perfect as a gift for your loved one or even as a promise ring. A 0.5 carat diamond is set in 18k gold with a matching, stackable golden band. Please enquire for sizing.',
     createdBy: users[0]
   },
@@ -364,7 +364,7 @@ User
     category: 'Home & Living',
     price: 32,
     quantity: 1,
-    image: '',
+    image: 'blue-chair.png',
     description: 'A comfy and retro chair for your living room or balcony. Blue and white mesh decorate the backrest and seat of the chair and a cantilevered base, also known as a "Floofle", supports your weight.',
     createdBy: users[1]
   }
