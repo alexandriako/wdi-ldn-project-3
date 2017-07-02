@@ -7,7 +7,7 @@ angular
 // .config(function() {
 //   Stripe.setPublishableKey('pk_test_ULwvAlGf5PSFbkLqX9gQN8sA');
 // });
-.controller('myCtrl', ['$scope', '$http', 'ngCart', function($scope, $http, ngCart) {
+.controller('cartCtrl', ['$scope', '$http', 'ngCart', function($scope, $http, ngCart) {
   ngCart.setTaxRate(7.5);
   ngCart.setShipping(2.99);
 }]);
