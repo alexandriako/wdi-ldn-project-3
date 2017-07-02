@@ -38,6 +38,7 @@ function ProductsShowCtrl(Product, $stateParams, $state, $uibModal) {
   .$promise
   .then((product) => {
     vm.product = product;
+    // console.log(vm.product);
   });
 
 
