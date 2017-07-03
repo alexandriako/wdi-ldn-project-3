@@ -9,17 +9,14 @@ const routes          = require('./config/routes');
 const customResponses = require('./lib/customResponses');
 const errorHandler    = require('./lib/errorHandler');
 
-var cors              = require('cors');
 var stripe            = require('stripe')('sk_test_CTZ2JQpQsS5LHPLTWutqqyeq');
 const { port, env, dbURI }    = require('./config/environment');
 
 mongoose.connect(dbURI);
 
 app.use(bodyParser.json());
-app.use(cors({
-  origin: 'http://localhost:7000'
-}));
-app.post('/payment', function(req, res) {
+
+app.post('/api/payment', function(req, res) {
   var token = req.body.token;
   console.log(charge);
 
