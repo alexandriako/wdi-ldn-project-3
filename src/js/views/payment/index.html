@@ -8,7 +8,7 @@
     <form class="form" name="payment.Form" ng-hide="payment.paymentSuccessful" ng-submit="payment.pay()">
       <div class="row">
         <div class="col-sm-8">
-          <div class="form-group" ng-class="{ 'has-feedback': payment.Form.payee.$dirty, 'has-success': (payment.Form.payee.$valid && payment.Form.payee.$dirty), 'has-error': (payment.Form.payee.$invalid && payment.Form.payee.$dirty) }">
+          <div class="form-group" ng-class=" { 'has-feedback': payment.Form.payee.$dirty, 'has-success': (payment.Form.payee.$valid && payment.Form.payee.$dirty), 'has-error': (payment.Form.payee.$invalid && payment.Form.payee.$dirty) }">
             <label class="control-label">Card Holder's Name</label>
             <input type="text" name="payee" class="form-control" ng-model="payment.payee" placeholder="Mr A Smith" value="Mr A Smith" required ng-minlength="2">
             <span ng-if="(payment.Form.payee.$valid && payment.Form.payee.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
