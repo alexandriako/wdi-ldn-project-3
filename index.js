@@ -15,7 +15,6 @@ const { port, env, dbURI }    = require('./config/environment');
 
 mongoose.connect(dbURI);
 
-
 app.use(bodyParser.json());
 app.use(cors({
   origin: 'http://localhost:7000'

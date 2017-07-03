@@ -27,6 +27,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/products/edit.html',
     controller: 'ProductsEditCtrl as productsEdit'
   })
+  .state('cart', {
+    url: '/cart',
+    templateUrl: 'js/views/checkout/cart.html',
+    controller: 'CartCtrl as cart'
+  })
   .state('login', {
     url: '/login',
     templateUrl: 'js/views/auth/login.html',

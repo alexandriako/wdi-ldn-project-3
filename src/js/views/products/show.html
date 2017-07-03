@@ -1,8 +1,52 @@
 <!DOCTYPE html>
 <div class="show">
+<<<<<<< HEAD
   <h2>{{ productsShow.product.name }}</h2>
   <img src="{{productsShow.product.image }}">
   <h3> {{ productsShow.product.price }}</h3>
   <h3> {{ productsShow.product.createdBy.username }}</h3>
+=======
+  <img src="{{productsShow.product.image }}">
+  <h4>{{ productsShow.product.category }}</h4>
+  <h2>{{ productsShow.product.name }}</h2>
+  <h3>{{ productsShow.product.createdBy }}</h3>
+  <h3> £{{ productsShow.product.price }}</h3>
+>>>>>>> 020df417d1e8dde8f785d9224852baf3db69d1bd
   <p> {{ productsShow.product.description }} </p>
+</div>
+<div ng-controller="cartCtrl">
+
+  <div class="row">
+
+
+  </div>
+  <hr />
+  <h3>Add to Cart</h3>
+  <div class="row">
+    <div class="col-xs-6 col-sm-3">
+
+      <ngcart-addtocart id="{{productsShow.product.id}}" name="{{productsShow.product.name}}" price="{{productsShow.product.price}}" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart>
+    </div>
+  </div>
+
+  <script type="text/ng-template" id="template/ngCart/addtocart.html"><div ng-hide="attrs.id">
+    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
+
+  </div>
+  <div ng-show="attrs.id">
+    <div>
+      <span ng-show="quantityMax">
+        <select name="quantity" id="quantity" ng-model="q"
+        ng-options=" v for v in qtyOpt"></select>
+      </span>
+      <a class="btn btn-sm btn-primary"
+      ng-click="ngCart.addItem(id, name, price, q, data)"
+      ng-transclude></a>
+    </div>
+    <mark  ng-show="inCart()">
+      This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+    </mark>
+  </div>
+</script>
+
 </div>
