@@ -24,12 +24,13 @@ function ProductsNewCtrl(Product, $state) {
   vm.product = {};
 
   function productsCreate() {
-    Product
-    .save(vm.product)
-    .$promise
-    .then(() => $state.go('productsIndex'));
+    if(vm.newForm.$valid) {
+      Product
+        .save(vm.product)
+        .$promise
+        .then(() => $state.go('productsIndex'));
+    }
   }
-
   vm.create = productsCreate;
 }
 
