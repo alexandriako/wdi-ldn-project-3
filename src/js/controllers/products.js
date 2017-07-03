@@ -7,20 +7,23 @@ angular
 .controller('ProductsDeleteCtrl', ProductsDeleteCtrl);
 
 
-ProductsIndexCtrl.$inject = ['Product', 'filterFilter', '$scope'];
-function ProductsIndexCtrl(Product, filterFilter, $scope) {
+ProductsIndexCtrl.$inject = ['Product'];
+function ProductsIndexCtrl(Product) {
   const vm = this;
   vm.all = Product.query();
 
   vm.myInterval = 5000;
   vm.noWrapSlides = false;
   vm.active = 0;
+<<<<<<< HEAD
   console.log(vm.all);
   function filterProducts() {
     const params = { name: vm.q };
     vm.filtered = filterFilter(vm.all, params);
   }
   $scope.$watch(() => vm.q, filterProducts);
+=======
+>>>>>>> e3b88913ffc28aeed1ff00c67514894debf4e664
 }
 
 
@@ -30,12 +33,13 @@ function ProductsNewCtrl(Product, $state) {
   vm.product = {};
 
   function productsCreate() {
-    Product
-    .save(vm.product)
-    .$promise
-    .then(() => $state.go('productsIndex'));
+    if(vm.newForm.$valid) {
+      Product
+        .save(vm.product)
+        .$promise
+        .then(() => $state.go('productsIndex'));
+    }
   }
-
   vm.create = productsCreate;
 }
 
