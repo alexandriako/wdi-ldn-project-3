@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <div class="show">
-<<<<<<< HEAD
   <h2>{{ productsShow.product.name }}</h2>
   <img src="{{productsShow.product.image }}">
-  <h3> {{ productsShow.product.price }}</h3>
-  <h3> {{ productsShow.product.createdBy.username }}</h3>
-=======
-  <img src="{{productsShow.product.image }}">
-  <h4>{{ productsShow.product.category }}</h4>
-  <h2>{{ productsShow.product.name }}</h2>
-  <h3>{{ productsShow.product.createdBy }}</h3>
   <h3> £{{ productsShow.product.price }}</h3>
->>>>>>> 020df417d1e8dde8f785d9224852baf3db69d1bd
+  <h3>{{ productsShow.product.createdBy.username }}</h3>
+  <h4>{{ productsShow.product.category }}</h4>
   <p> {{ productsShow.product.description }} </p>
 </div>
+
+<a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn btn-primary">Edit</a>
+<button ng-click="productsShow.openModal()" class="btn btn-danger">Delete</button>
+
+
 <div ng-controller="cartCtrl">
 
   <div class="row">

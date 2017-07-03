@@ -2,19 +2,11 @@
 console.log('Hot damn!');
 //
 angular
-<<<<<<< HEAD
-  .module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer', 'ui.bootstrap', 'ngAnimate', 'ngMessages']);
+  .module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer', 'ui.bootstrap', 'ngAnimate', 'ngMessages'])
+  .controller('cartCtrl', ['$scope', '$http', 'ngCart', function($scope, $http, ngCart) {
+    ngCart.setTaxRate(7.5);
+    ngCart.setShipping(2.99);
+  }]);
   // .config(function() {
   //   Stripe.setPublishableKey('pk_test_ULwvAlGf5PSFbkLqX9gQN8sA');
   // });
-=======
-.module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer', 'ui.bootstrap', 'ngAnimate', 'ngCart'])
-// .constant('API_URL', 'http://localhost:4000')
-// .config(function() {
-//   Stripe.setPublishableKey('pk_test_ULwvAlGf5PSFbkLqX9gQN8sA');
-// });
-.controller('cartCtrl', ['$scope', '$http', 'ngCart', function($scope, $http, ngCart) {
-  ngCart.setTaxRate(7.5);
-  ngCart.setShipping(2.99);
-}]);
->>>>>>> 020df417d1e8dde8f785d9224852baf3db69d1bd
