@@ -7,11 +7,20 @@ angular
 .controller('ProductsDeleteCtrl', ProductsDeleteCtrl);
 
 
-ProductsIndexCtrl.$inject = ['Product'];
-function ProductsIndexCtrl(Product) {
+ProductsIndexCtrl.$inject = ['Product', 'filterFilter', '$scope'];
+function ProductsIndexCtrl(Product, filterFilter, $scope) {
   const vm = this;
   vm.all = Product.query();
-  console.log(Product);
+
+  vm.myInterval = 5000;
+  vm.noWrapSlides = false;
+  vm.active = 0;
+
+  function filterProducts() {
+    const params = { name: vm.q };
+    vm.filtered = filterFilter(vm.all, params);
+  }
+  $scope.$watch(() => vm.q, filterProducts);
 }
 
 

@@ -21,13 +21,34 @@
   }
 }
 
+.carousel {
+  div {
+    height: 400px;
+  }
+  img {
+    width: 500px;
+    height: 100%;
+  }
+}
+
 .index {
+  text-align: center;
+  input {
+    margin: 20px auto;
+  }
   .image {
     margin: 10px 20px;
     padding: 10px auto;
     text-align: center;
     img {
       width: 500px;
+      height: 100%;
     }
+  }
+}
+
+.show {
+  h2 {
+    text-align: center;
   }
 }
