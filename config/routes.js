@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const products = require('../controllers/products');
 const users = require('../controllers/user');
+const imageUpload = require('../lib/imageUpload');
 // const auth = require('../controllers/auth');
 // const secureRoute = require('../lib/secureRoute');
 
 
 router.route('/products')
 .get(products.index)
-.post(products.create);
+.post(imageUpload, products.create);
 
 router.route('/products/:id')
 // .all(secureRoute)
