@@ -1,3 +1,6 @@
 <!DOCTYPE html>
 
-<h1>User index!!!!</h1>
+<div ng-repeat="user in usersIndex.all">
+  <div class="image"><a ui-sref="usersShow({ id: user.id })"><img ng-src="http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png" class="img-responsive"></a></div>
+  <h2>{{ user.username }}</h2>
+</div>

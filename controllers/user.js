@@ -29,6 +29,9 @@ function showRoute(req, res, next) {
 
 
 function updateRoute(req, res, next) {
+
+  if(req.file) req.body.image = req.file.key;
+
   User
     .findById(req.params.id)
     .exec()

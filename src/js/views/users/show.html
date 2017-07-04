@@ -1,3 +1,19 @@
 <!DOCTYPE html>
 
-<h1>User show!!</h1>
+<div class="user" >
+    <div class="image"><img class="img-fluid" ng-src="http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png"></div>
+    <h1 class="title">{{ usersShow.user.username }}</h1>
+    <form method="POST" action="usersShow({ user.id })">
+      <a ui-sref="usersShow({ user.id })" class="btn" ng-if="main.isAuthenticated()">Edit Account</a>
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="btn deleteAccount" ng-if="main.isAuthenticated()">Delete Account</button>
+    </form>
+</div>
+
+<hr>
+
+<a ui-sref="productsNew" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.createdBy.id"><button class="btn btnNew">Sell</button></a>
+
+<div class="products">
+  <ul></ul>
+</div>
