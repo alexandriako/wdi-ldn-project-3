@@ -1,10 +1,11 @@
 /* global Stripe */
-angular
-  .module('wabisabiApp')
-  .controller('StripeCtrl', StripeCtrl);
 
-StripeCtrl.$inject = ['$http'];
-function StripeCtrl($http) {
+angular
+.module('wabisabiApp')
+.controller('StripeCtrl', StripeCtrl);
+
+StripeCtrl.$inject = ['$http', 'ngCart'];
+function StripeCtrl($http, ngCart) {
   var vm = this;
 
   vm.card = {};
@@ -12,6 +13,8 @@ function StripeCtrl($http) {
   vm.amount = null;
   vm.currency = 'gbp';
   vm.paymentSuccessful = true;
+  vm.total = ngCart.totalCost();
+
 
   vm.pay = function pay() {
     Stripe.card.createToken(vm.card, (status, response) => {
@@ -23,16 +26,17 @@ function StripeCtrl($http) {
           currency: vm.currency,
           payee: vm.payee
         };
-        console.log('This is the id ', response.id);
-        console.log('Payee', vm.payee);
-        console.log('Payee', vm.amount);
+        console.log('This is the response ', response);
+        // console.log('Payee', vm.payee);
+        // console.log('amount', vm.amount);
 
         $http
-          .post('/api/payment', data)
-          .then(function(res) {
-            vm.paymentSuccessful = (res.status === 200);
+        .post('/api/payment', data)
+        .then(function(res) {
+          vm.paymentSuccessful = (res.status === 200);
 
-          });
+        });
+
       }
     });
   };

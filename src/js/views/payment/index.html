@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <div class="container" ng-controller="StripeCtrl as payment">
-    <h1>Payment</h1>
+
+    <div ng-model="payment.total">
+      <h1>Total {{ payment.total }}</h1>
+    </div>
+    <h1> </h1>
     <form class="form" name="payment.Form" ng-hide="payment.paymentSuccessful" ng-submit="payment.pay()">
       <div class="row">
         <div class="col-sm-8">
-          <div class="form-group" ng-class="{ 'has-feedback': payment.Form.payee.$dirty, 'has-success': (payment.Form.payee.$valid && payment.Form.payee.$dirty), 'has-error': (payment.Form.payee.$invalid && payment.Form.payee.$dirty) }">
+          <div class="form-group" ng-class=" { 'has-feedback': payment.Form.payee.$dirty, 'has-success': (payment.Form.payee.$valid && payment.Form.payee.$dirty), 'has-error': (payment.Form.payee.$invalid && payment.Form.payee.$dirty) }">
             <label class="control-label">Card Holder's Name</label>
             <input type="text" name="payee" class="form-control" ng-model="payment.payee" placeholder="Mr A Smith" value="Mr A Smith" required ng-minlength="2">
             <span ng-if="(payment.Form.payee.$valid && payment.Form.payee.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
@@ -16,7 +20,7 @@
             <label class="control-label">Total Amount to Pay</label>
             <div class="input-group">
               <div class="input-group-addon">&pound;</div>
-              <input type="text" name="amount" class="form-control" ng-model="payment.amount" placeholder="25.00" value="25.00" required ng-pattern="/^[0-9]+(\.[0-9]{2})?$/">
+              <input type="text" name="amount" class="form-control" ng-model="payment.amount" placeholder="25.00" disabled value="{{ payment.total }}" required ng-pattern="/^[0-9]+(\.[0-9]{2})?$/">
             </div>
             <span ng-if="(payment.Form.amount.$valid && payment.Form.amount.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
             <span ng-if="(payment.Form.amount.$invalid && payment.Form.amount.$dirty)" class="glyphicon glyphicon-remove form-control-feedback"></span>
