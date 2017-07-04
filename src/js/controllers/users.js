@@ -10,13 +10,15 @@ function UsersIndexCtrl(User) {
   vm.all = User.query();
 }
 
-UsersShowCtrl.$inject = ['User', '$stateParams'];
-function UsersShowCtrl(User, $stateParams) {
+UsersShowCtrl.$inject = ['User', 'Product', '$stateParams'];
+function UsersShowCtrl(User, Product, $stateParams) {
   const vm = this;
 
   User.get($stateParams)
   .$promise
   .then((user) => {
     vm.user = user;
+    vm.products = Product.query({ createdBy: user.id });
   });
+  console.log(vm.user);
 }
