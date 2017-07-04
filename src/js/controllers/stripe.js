@@ -4,8 +4,8 @@ angular
 .module('wabisabiApp')
 .controller('StripeCtrl', StripeCtrl);
 
-StripeCtrl.$inject = ['$http', 'ngCart'];
-function StripeCtrl($http, ngCart) {
+StripeCtrl.$inject = ['$http', 'ngCart', '$stateParams', '$state', 'User'];
+function StripeCtrl($http, ngCart, $stateParams, $state, User) {
   var vm = this;
 
   vm.card = {};
@@ -26,28 +26,30 @@ function StripeCtrl($http, ngCart) {
           currency: vm.currency,
           payee: vm.payee
         };
+
         console.log('This is the response ', response);
+
         // console.log('Payee', vm.payee);
         // console.log('amount', vm.amount);
-
         $http
         .post('/api/payment', data)
         .then(function(res) {
           vm.paymentSuccessful = (res.status === 200);
-
         });
-
       }
     });
-  };
 
-  vm.reset = function reset() {
-    vm.card = {};
-    vm.payee = '';
-    vm.amount = null;
-    vm.paymentSuccessful = false;
-    vm.Form.$setPristine(true);
-    // use vanilla JS to reset form to remove browser's native autocomplete highlighting
-    document.querySelector('form').reset();
+
+
+
+    vm.reset = function reset() {
+      vm.card = {};
+      vm.payee = '';
+      vm.amount = null;
+      vm.paymentSuccessful = false;
+      vm.Form.$setPristine(true);
+      // use vanilla JS to reset form to remove browser's native autocomplete highlighting
+      document.querySelector('form').reset();
+    };
   };
 }
