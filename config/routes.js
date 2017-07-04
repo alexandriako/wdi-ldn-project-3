@@ -2,6 +2,7 @@ const router = require('express').Router();
 const products = require('../controllers/products');
 const users = require('../controllers/user');
 const auth = require('../controllers/auth');
+const orders = require('../controllers/orders');
 const imageUpload = require('../lib/imageUpload');
 const secureRoute = require('../lib/secureRoute');
 
@@ -22,6 +23,13 @@ router.route('/user/:id')
 .get(users.show)
 .put(secureRoute, users.update)
 .delete(secureRoute, users.delete);
+
+router.route('/orders')
+  .get(orders.index)
+  .post(orders.create);
+
+router.route('/orders/:id')
+  .get(orders.show);
 
 router.route('/register')
   .post(auth.register);
