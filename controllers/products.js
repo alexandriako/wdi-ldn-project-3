@@ -9,13 +9,8 @@ function indexRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-<<<<<<< HEAD
-  if(req.file) req.body.image = req.file.filename;
-=======
-
   if(req.file) req.body.image = req.file.filename;
   req.body.createdBy = req.user;
->>>>>>> e3b88913ffc28aeed1ff00c67514894debf4e664
 
   Product
   .create(req.body)

@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <div class="carousel" uib-carousel active="productsIndex.active" interval="productsIndex.myInterval" no-wrap="productsIndex.noWrapSlides">
       <div uib-slide ng-repeat="product in productsIndex.all" index="$index">
-<<<<<<< HEAD
-      <img ng-src="{{product.imageSRC }}" style="margin:auto;">
-=======
       <img ng-src="{{product.imageSRC}}" style="margin:auto;">
->>>>>>> e3b88913ffc28aeed1ff00c67514894debf4e664
       </div>
 </div>
 
 <div class="row index">
   <div><input type="text" class="search" ng-model="productsIndex.q" placeholder="Search..."></div>
 
-<<<<<<< HEAD
-  <div ng-repeat="product in productsIndex.all" class="col-lg-4 col-md-6 col-sm-12">
-    <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC }}" class="img-responsive"></a></div>
-=======
   <div ng-repeat="product in productsIndex.all | filter: productsIndex.q" class="col-lg-4 col-md-6 col-sm-12">
     <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC
      }}" class="img-responsive"></a></div>
->>>>>>> e3b88913ffc28aeed1ff00c67514894debf4e664
     <h2>{{ product.name }}</h2>
 </div>
 </div>

@@ -15,15 +15,6 @@ function ProductsIndexCtrl(Product) {
   vm.myInterval = 5000;
   vm.noWrapSlides = false;
   vm.active = 0;
-<<<<<<< HEAD
-  console.log(vm.all);
-  function filterProducts() {
-    const params = { name: vm.q };
-    vm.filtered = filterFilter(vm.all, params);
-  }
-  $scope.$watch(() => vm.q, filterProducts);
-=======
->>>>>>> e3b88913ffc28aeed1ff00c67514894debf4e664
 }
 
 

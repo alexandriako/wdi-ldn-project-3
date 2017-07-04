@@ -10,9 +10,9 @@ function StripeCtrl($http, ngCart) {
 
   vm.card = {};
   vm.payee = null;
-  vm.amount = null;
+  vm.amount = ngCart.totalCost();
   vm.currency = 'gbp';
-  vm.paymentSuccessful = true;
+  vm.paymentSuccessful = false;
   vm.total = ngCart.totalCost();
 
 
@@ -22,7 +22,7 @@ function StripeCtrl($http, ngCart) {
         var data = {
           card: vm.card,
           token: response.id,
-          amount: vm.amount,
+          amount: vm.total,
           currency: vm.currency,
           payee: vm.payee
         };
@@ -34,7 +34,7 @@ function StripeCtrl($http, ngCart) {
         .post('/api/payment', data)
         .then(function(res) {
           vm.paymentSuccessful = (res.status === 200);
-
+          ngCart.empty(true);
         });
 
       }
