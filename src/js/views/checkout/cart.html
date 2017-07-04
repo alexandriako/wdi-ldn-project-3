@@ -10,16 +10,12 @@
 
     <div class="row">
       <div class="col-xs-4">
-        <h4>service 'log'</h4>
-        <ngcart-checkout service="log" ui-sref="payment">Checkout</ngcart-checkout>
-      </div>
-      <div class="col-xs-4">
-        <h4>service 'http'</h4>
-        <ngcart-checkout service="http" settings="httpSettings">Checkout </ngcart-checkout>
-      </div>
-      <div class="col-xs-4">
         <ngcart-checkout service="paypal" settings="payPalSettings"></ngcart-checkout>
       </div>
+      <div class="col-xs-4">
+        <ngcart-checkout service="log" ui-sref="payment">Checkout</ngcart-checkout>
+      </div>
+
     </div>
   </div>
 </div>
@@ -98,7 +94,7 @@
 
   <script type="text/ng-template" id="template/ngCart/checkout.html">
 
-    <div ng-if="service=='http' || service == 'log'">
+    <div ng-if="service == 'log'">
       <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
     </div>
 
