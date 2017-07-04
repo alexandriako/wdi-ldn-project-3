@@ -8,6 +8,7 @@ const User = require('../models/user');
 const Product = require('../models/product');
 
 
+
 User.collection.drop();
 Product.collection.drop();
 
@@ -368,6 +369,7 @@ User
   ]);
 
 })
+
 .then((products) => console.log(`${products.length} products created`))
 .catch((err) => console.log(err))
 .finally(() => mongoose.connection.close());

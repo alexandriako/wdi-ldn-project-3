@@ -7,5 +7,4 @@ angular
   }])
   .config(function() {
     Stripe.setPublishableKey('pk_test_ULwvAlGf5PSFbkLqX9gQN8sA');
-    // Stripe.setApiVersion('2015-10-12');
   });

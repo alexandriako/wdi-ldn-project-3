@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <div class="show">
   <h2>{{ productsShow.product.name }}</h2>
-  <img src="{{productsShow.product.imageSRC }}">
+  <div class="image"><img src="{{productsShow.product.imageSRC }}"></div>
   <h3> £{{ productsShow.product.price }}</h3>
-  <h3>{{ productsShow.product.createdBy.username }}</h3>
+  <a ui-sref="usersShow({ id: productsShow.product.createdBy.id })"><h4>{{ productsShow.product.createdBy.username }}</h4></a>
   <h4>{{ productsShow.product.category }}</h4>
   <p> {{ productsShow.product.description }} </p>
 </div>
@@ -19,6 +19,7 @@
 
   </div>
   <hr />
+
   <h3>Add to Cart</h3>
   <div class="row">
     <div class="col-xs-6 col-sm-3">

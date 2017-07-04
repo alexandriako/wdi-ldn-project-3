@@ -8,58 +8,58 @@
     <form class="form" name="payment.Form" ng-hide="payment.paymentSuccessful" ng-submit="payment.pay()">
       <div class="row">
         <div class="col-sm-8">
-          <div class="form-group" ng-class=" { 'has-feedback': payment.Form.payee.$dirty, 'has-success': (payment.Form.payee.$valid && payment.Form.payee.$dirty), 'has-error': (payment.Form.payee.$invalid && payment.Form.payee.$dirty) }">
+          <div class="form-group" ng-class=" { 'has-feed, 'has-success': (payment.Form.payee.$va), 'has-error': (payment.Form.payee.$inva) }">
             <label class="control-label">Card Holder's Name</label>
             <input type="text" name="payee" class="form-control" ng-model="payment.payee" placeholder="Mr A Smith" value="Mr A Smith" required ng-minlength="2">
-            <span ng-if="(payment.Form.payee.$valid && payment.Form.payee.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
-            <span ng-if="(payment.Form.payee.$invalid && payment.Form.payee.$dirty)" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            <span ng-if="(payment.Form.payee.$va)" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span ng-if="(payment.Form.payee.$inva)" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="form-group" ng-class="{ 'has-feedback': payment.Form.amount.$dirty, 'has-success': (payment.Form.amount.$valid && payment.Form.amount.$dirty), 'has-error': (payment.Form.amount.$invalid && payment.Form.amount.$dirty) }">
+          <div class="form-group" ng-class="{ 'has-feedb, 'has-success': (payment.Form.amount.$val), 'has-error': (payment.Form.amount.$inval) }">
             <label class="control-label">Total Amount to Pay</label>
             <div class="input-group">
               <div class="input-group-addon">&pound;</div>
-              <input type="text" name="amount" class="form-control" ng-model="payment.amount" placeholder="25.00" disabled value="{{ payment.total }}" required ng-pattern="/^[0-9]+(\.[0-9]{2})?$/">
+              <input type="text" name="amount" class="form-control" ng-model="payment.amount" placeholder="25.00" value="{{ payment.total }}" required ng-pattern="/^[0-9]+(\.[0-9]{2})?$/">
             </div>
-            <span ng-if="(payment.Form.amount.$valid && payment.Form.amount.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
-            <span ng-if="(payment.Form.amount.$invalid && payment.Form.amount.$dirty)" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            <span ng-if="(payment.Form.amount.$val)" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span ng-if="(payment.Form.amount.$inval)" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-8">
-          <div class="form-group" ng-class="{ 'has-feedback': payment.Form['card-number'].$dirty, 'has-success': (payment.Form['card-number'].$valid && payment.Form['card-number'].$dirty), 'has-error': (payment.Form['card-number'].$invalid && payment.Form['card-number'].$dirty) }">
+          <div class="form-group" ng-class="{ 'has-feedback': pa, 'has-success': (payment.Form['card-number'].$valid && pa), 'has-error': (payment.Form['card-number'].$invalid && pa) }">
             <label class="control-label">Card Number</label>
             <input type="text" name="card-number" class="form-control" ng-model="payment.card.number" placeholder="4242424242424242" value="4242424242424242" required ng-pattern="/^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11})$/">
-            <span ng-if="(payment.Form['card-number'].$valid && payment.Form['card-number'].$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
-            <span ng-if="(payment.Form['card-number'].$invalid && payment.Form['card-number'].$dirty)" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            <span ng-if="(payment.Form['card-number'].$valid && pa)" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span ng-if="(payment.Form['card-number'].$invalid && pa)" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="form-group" ng-class="{ 'has-feedback': payment.Form.cvc.$dirty, 'has-success': (payment.Form.cvc.$valid && payment.Form.cvc.$dirty), 'has-error': (payment.Form.cvc.$invalid && payment.Form.cvc.$dirty) }">
+          <div class="form-group" ng-class="{ 'has-fe, 'has-success': (payment.Form.cvc.$), 'has-error': (payment.Form.cvc.$in) }">
             <label class="control-label">CVC</label>
             <input type="text" name="cvc" class="form-control"   ng-model="payment.card.cvc" placeholder="123" value="123" required ng-maxlength="3" ng-pattern="/[0-9]{3}/">
-            <span ng-if="(payment.Form.cvc.$valid && payment.Form.cvc.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
-            <span ng-if="(payment.Form.cvc.$invalid && payment.Form.cvc.$dirty)" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            <span ng-if="(payment.Form.cvc.$)" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span ng-if="(payment.Form.cvc.$in)" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4">
-          <div class="form-group" ng-class="{ 'has-feedback': payment.Form.exp_month.$dirty, 'has-success': (payment.Form.exp_month.$valid && payment.Form.exp_month.$dirty), 'has-error': (payment.Form.exp_month.$invalid && payment.Form.exp_month.$dirty) }">
+          <div class="form-group" ng-class="{ 'has-feedback, 'has-success': (payment.Form.exp_month.$valid ), 'has-error': (payment.Form.exp_month.$invalid ) }">
             <label class="control-label">Expiry Month</label>
             <input type="text" name="exp_month" class="form-control" ng-model="payment.card.exp_month" placeholder="06" value="06" required ng-pattern="/(0[1-9]|1[0-2])/">
-            <span ng-if="(payment.Form.exp_month.$valid && payment.Form.exp_month.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
-            <span ng-if="(payment.Form.exp_month.$invalid && payment.Form.exp_month.$dirty)" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            <span ng-if="(payment.Form.exp_month.$valid )" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span ng-if="(payment.Form.exp_month.$invalid )" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="form-group" ng-class="{ 'has-feedback': payment.Form.exp_year.$dirty, 'has-success': (payment.Form.exp_year.$valid && payment.Form.exp_year.$dirty), 'has-error': (payment.Form.exp_year.$invalid && payment.Form.exp_year.$dirty) }">
+          <div class="form-group" ng-class="{ 'has-feedbac, 'has-success': (payment.Form.exp_year.$valid), 'has-error': (payment.Form.exp_year.$invalid) }">
             <label class="control-label">Exipry Year</label>
             <input type="text" name="exp_year" class="form-control" ng-model="payment.card.exp_year" placeholder="2016" value="2016" required ng-pattern="/20(1[6-9]|2[0-9])/">
-            <span ng-if="(payment.Form.exp_year.$valid && payment.Form.exp_year.$dirty)" class="glyphicon glyphicon-ok form-control-feedback"></span>
-            <span ng-if="(payment.Form.exp_year.$invalid && payment.Form.exp_year.$dirty)" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            <span ng-if="(payment.Form.exp_year.$valid)" class="glyphicon glyphicon-ok form-control-feedback"></span>
+            <span ng-if="(payment.Form.exp_year.$invalid)" class="glyphicon glyphicon-remove form-control-feedback"></span>
           </div>
         </div>
       </div>

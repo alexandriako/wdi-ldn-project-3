@@ -2,20 +2,16 @@ const Product = require('../models/product');
 
 function indexRoute(req, res, next) {
   Product
-  .find()
+  .find(req.query)
   .exec()
   .then((products) => res.json(products))
   .catch(next);
 }
 
 function createRoute(req, res, next) {
-<<<<<<< HEAD
-  if(req.file) req.body.image = req.file.filename;
-=======
 
   if(req.file) req.body.image = req.file.filename;
   req.body.createdBy = req.user;
->>>>>>> e3b88913ffc28aeed1ff00c67514894debf4e664
 
   Product
   .create(req.body)
@@ -26,6 +22,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Product
   .findById(req.params.id)
+  .populate('createdBy')
   .exec()
   .then((product) => {
     if(!product) return res.notFound();
