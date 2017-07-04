@@ -19,8 +19,7 @@ router.route('/user')
 .get(users.index);
 
 router.route('/user/:id')
-.all(secureRoute)
-.get(secureRoute, users.show)
+.get(users.show)
 .put(secureRoute, users.update)
 .delete(secureRoute, users.delete);
 
@@ -29,6 +28,7 @@ router.route('/register')
 
 router.route('/login')
   .post(auth.login);
+
 
 router.all('/*', (req, res) => res.notFound());
 

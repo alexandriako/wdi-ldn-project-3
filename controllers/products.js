@@ -22,6 +22,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Product
     .findById(req.params.id)
+    .populate('createdBy')
     .exec()
     .then((product) => {
       if(!product) return res.notFound();
