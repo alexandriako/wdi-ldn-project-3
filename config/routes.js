@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const products = require('../controllers/products');
 const users = require('../controllers/user');
+<<<<<<< HEAD
+=======
+
+>>>>>>> checkout
 const auth = require('../controllers/auth');
 const orders = require('../controllers/orders');
 const imageUpload = require('../lib/imageUpload');

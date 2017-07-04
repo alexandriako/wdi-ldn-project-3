@@ -9,7 +9,6 @@ function base64() {
   return {
     restrict: 'A',
     require: 'ngModel',
-
     link($scope, element, attrs, ngModel) {
 
       fileReader.onload = function fileLoaded() {
