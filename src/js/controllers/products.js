@@ -15,10 +15,6 @@ function ProductsIndexCtrl(Product) {
   vm.myInterval = 5000;
   vm.noWrapSlides = false;
   vm.active = 0;
-<<<<<<< HEAD
-
-=======
->>>>>>> checkout
 }
 
 
