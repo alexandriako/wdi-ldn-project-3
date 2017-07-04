@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <div class="carousel" uib-carousel active="productsIndex.active" interval="productsIndex.myInterval" no-wrap="productsIndex.noWrapSlides">
+  <div uib-slide ng-repeat="product in productsIndex.all" index="$index">
+    <img ng-src="{{product.imageSRC}}" style="margin:auto;">
+  </div>
       <div uib-slide ng-repeat="product in productsIndex.all" index="$index">
       <img ng-src="{{product.imageSRC}}" style="margin:auto;">
       </div>
@@ -8,7 +11,13 @@
   <div><input type="text" class="search" ng-model="productsIndex.q" placeholder="Search..."></div>
   <div ng-repeat="product in productsIndex.all | filter: productsIndex.q" class="col-lg-4 col-md-6 col-sm-12">
     <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC
+    }}" class="img-responsive"></a></div>
+  <div><input type="text" class="search" ng-model="productsIndex.q" placeholder="Search..."></div>
+
+  <div ng-repeat="product in productsIndex.all | filter: productsIndex.q" class="col-lg-4 col-md-6 col-sm-12">
+    <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC
      }}" class="img-responsive"></a></div>
     <h2>{{ product.name }}</h2>
+  </div>
 </div>
 </div>
