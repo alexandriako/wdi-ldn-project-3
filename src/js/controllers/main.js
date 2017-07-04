@@ -17,9 +17,12 @@ function MainCtrl($rootScope, $state, $auth, $transitions) {
     }
   });
 
-  $transitions.onStart({}, (transition) => {
-    console.log(transition.$to().name);
+  $rootScope.$on('message', (e, message) => {
+    vm.stateHasChanged = false;
+    vm.message = message;
+  });
 
+  $transitions.onSuccess({}, (transition) => {
     vm.pageName = transition.$to().name;
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
