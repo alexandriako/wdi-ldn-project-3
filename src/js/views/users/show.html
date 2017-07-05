@@ -2,6 +2,7 @@
 
 <div class="user" >
     <div class="image"><img class="img-fluid" ng-src="http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png"></div>
+    <h3>{{ usersShow.orders }}</h3>
     <h1 class="title">{{ usersShow.user.username }}</h1>
     <h3>{{ usersShow.user.description }}</h3>
     <form method="POST" action="usersShow({ user.id })">
@@ -20,5 +21,3 @@
 
 
 <a ui-sref="productsNew" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.createdBy.id"><button class="btn btnNew">Sell</button></a>
-
-{{ usersShow.orders }}
