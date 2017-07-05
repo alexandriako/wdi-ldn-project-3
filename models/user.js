@@ -3,9 +3,11 @@ const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
+  username: { type: String, unique: true },
+  image: { type: String },
+  email: { type: String, unique: true },
+  instagramId: { type: Number },
+  password: { type: String },
   description: { type: String }
 });
 
@@ -32,10 +34,10 @@ userSchema.pre('remove', function removeImage(next) {
 
 
 userSchema.pre('validate', function checkPassword(next) {
-  if((!this.password && !this.instagramId)) {
+  if(!this.password && !this.instagramId) {
     this.invalidate('password', 'required');
   }
-  if(this.isModified('password') && this.password && this._passwordConfirmation !== this.password){
+  if(this.isModified('password') && this._passwordConfirmation !== this.password){
     this.invalidate('passwordConfirmation', 'does not match');
   }
   next();
@@ -52,8 +54,8 @@ userSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-userSchema.pre('remove', function removeUserPosts(next) {
-  this.model('Post').remove({ createdBy: this.id }, next);
+userSchema.pre('remove', function removeUserProducts(next) {
+  this.model('Product').remove({ createdBy: this.id }, next);
 });
 
 module.exports = mongoose.model('User', userSchema);

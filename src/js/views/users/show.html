@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 
 <div class="user" >
-    <div class="image"><img class="img-fluid" ng-src="http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png"></div>
+    <div class="image"><img class="img-fluid" ng-src="{{ usersShow.user.imageSRC }}"></div>
     <h1 class="title">{{ usersShow.user.username }}</h1>
     <h3>{{ usersShow.user.description }}</h3>
     <form method="POST" action="usersShow({ user.id })">
-      <a ui-sref="usersShow({ user.id })" class="btn" ng-if="main.isAuthenticated()">Edit Account</a>
+      <a ui-sref="usersEdit({ id: usersShow.user.id })" class="btn" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Edit Account</a>
       <input type="hidden" name="_method" value="DELETE">
-      <button class="btn deleteAccount" ng-if="main.isAuthenticated()">Delete Account</button>
+      <button class="btn" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Delete Account</button>
     </form>
 </div>
+
 <hr>
 
+<a ui-sref="productsNew" ng-if="main.isAuthenticated() && usersShow.user.id"><button class="btn btnNew">Sell</button></a>
+
 <div ng-repeat="product in usersShow.products" class="col-lg-4 col-md-6 col-sm-12">
-  <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.image }}"></a></div>
+  <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC }}"></a></div>
   <h3>{{ product.name }}</h3>
   <h3>£ {{ product.price }}</h3>
 </div>
-
-
-<a ui-sref="productsNew" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.createdBy.id"><button class="btn btnNew">Sell</button></a>

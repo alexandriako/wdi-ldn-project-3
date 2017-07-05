@@ -27,12 +27,6 @@ productSchema
     return image;
   });
 
-productSchema
-  .virtual('imageSRC')
-  .get(function getImageSRC() {
-    if(!this.image) return null;
-    return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${this.image}`;
-  });
 
 productSchema.pre('save', function checkPreviousImage(next) {
   if(this.isModified('image') && this._image) {
@@ -45,6 +39,7 @@ productSchema.pre('remove', function removeImage(next) {
   if(this.image) s3.deleteObject({ Key: this.image }, next);
   next();
 });
+
 
 
 module.exports = mongoose.model('Product', productSchema);

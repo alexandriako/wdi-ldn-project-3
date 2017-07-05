@@ -8,7 +8,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
   .state('productsIndex', {
-    url: '/home',
+    url: '/',
     templateUrl: 'js/views/products/index.html',
     controller: 'ProductsIndexCtrl as productsIndex'
   })
@@ -52,10 +52,15 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/users/index.html',
     controller: 'UsersIndexCtrl as usersIndex'
   })
+  .state('usersEdit', {
+    url: '/users/:id/edit',
+    templateUrl: 'js/views/users/edit.html',
+    controller: 'UsersEditCtrl as usersEdit'
+  })
   .state('payment', {
     url: '/payment',
     templateUrl: 'js/views/payment/index.html',
     controller: 'StripeCtrl as payment'
   });
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/');
 }

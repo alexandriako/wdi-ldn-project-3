@@ -17,7 +17,7 @@
     <form name="productsNew.newForm" ng-submit="productsNew.create()" novalidate>
       <div>
         <label for="image">Image</label>
-        <input base64 type="file" name="image" id="image" ng-model="productsNew.product.image" required>
+        <input base64 type="file" name="image" id="image" ng-model="productsNew.product.base64" required>
         <div ng-messages="productsNew.newForm.base64.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.base64.$touched) && productsNew.newForm.base64.$invalid" class="error">
           <div ng-message="required">Image is required.</div>
         </div>

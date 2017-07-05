@@ -39,4 +39,15 @@ function LoginCtrl($auth, $state, $rootScope) {
   }
 
   vm.submit = submit;
+
+  function authenticate(provider) {
+    console.log(provider);
+    $auth.authenticate(provider)
+      .then((res) => {
+        $rootScope.$broadcast('message', res.data.message);
+        $state.go('productsIndex');
+      })
+      .catch(() => $state.go('login'));
+  }
+  vm.authenticate = authenticate;
 }

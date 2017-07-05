@@ -15,12 +15,14 @@ Product.collection.drop();
 User
 .create([{
   username: 'origamiChick',
+  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
   email: 'alexandriako@yahoo.com',
   password: '123',
   passwordConfirmation: '123',
   description: 'Born in LA and raised in Tokyo, I am an avid collector of vintage jewelry and handmade pieces. On the side I like to peruse for hidden gems at thrift stores. Recently my partner and I launched our own fashion label.'
 },{
   username: 'alexandriako',
+  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
   email: 'alexandriamhko@gmail.com',
   password: '123',
   passwordConfirmation: '123',
@@ -28,24 +30,29 @@ User
 }
 , {
   username: 'lunchbox',
+  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
   email: 'jasontrk12@gmail.com',
   password: 'password',
   passwordConfirmation: 'password',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 }, {
+
   username: 'SriLankanDenzel',
+  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
   email: 'jasontrk@hotmail.co.uk',
   password: 'password',
   passwordConfirmation: 'password',
   description: 'Mr Boombastic, say me fantastic.'
 }, {
   username: 'mikedg',
+  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
   email: 'mike@mike',
   password: 'password',
   passwordConfirmation: 'password',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 }, {
   username: 'jack',
+  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
   email: 'jack@jack',
   password: 'password',
   passwordConfirmation: 'password',
