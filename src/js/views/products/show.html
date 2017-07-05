@@ -8,8 +8,8 @@
   <p> {{ productsShow.product.description }} </p>
 </div>
 
-<a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn btn-primary">Edit</a>
-<button ng-click="productsShow.openModal()" class="btn btn-danger">Delete</button>
+<a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn btn-primary" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Edit</a>
+<button ng-click="productsShow.open()" class="btn btn-danger" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Delete</button>
 
 
 <div ng-controller="cartCtrl">

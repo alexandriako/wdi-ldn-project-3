@@ -2,7 +2,7 @@ const Order = require('../models/order');
 
 function orderIndexRoute(req, res, next) {
   Order
-    .find(req.query) 
+    .find(req.query)
     .exec()
     .then((orders) => res.json(orders))
     .catch(next);
@@ -10,7 +10,7 @@ function orderIndexRoute(req, res, next) {
 
 function orderCreateRoute(req, res, next) {
 
-  if(req.file) req.body.image = req.file.filename;
+  // if(req.file) req.body.image = req.file.filename;
   // req.body.createdBy = req.user;
 
   Order

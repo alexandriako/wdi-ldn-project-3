@@ -38,17 +38,16 @@ function LoginCtrl($auth, $state, $rootScope) {
     }
   }
 
-  InstagramCtrl.$inject = ['$auth', '$state'];
-  function InstagramCtrl($auth, $state) {
-    const vm = this;
-
-    function authenticate(provider) {
-      $auth.authenticate(provider)
-        .then(() => $state.go('profile'));
-    }
-
-    vm.authenticate = authenticate;
-  }
-
   vm.submit = submit;
+
+  function authenticate(provider) {
+    console.log(provider);
+    $auth.authenticate(provider)
+      .then((res) => {
+        $rootScope.$broadcast('message', res.data.message);
+        $state.go('productsIndex');
+      })
+      .catch(() => $state.go('login'));
+  }
+  vm.authenticate = authenticate;
 }
