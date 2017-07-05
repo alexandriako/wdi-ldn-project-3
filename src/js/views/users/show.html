@@ -4,7 +4,7 @@
     <div class="image"><img class="img-fluid" ng-src="{{ usersShow.user.imageSRC }}"></div>
     <h1 class="title">{{ usersShow.user.username }}</h1>
     <h3>{{ usersShow.user.description }}</h3>
-    <form method="POST" action="usersShow({ user.id })">
+    <form>
       <a ui-sref="usersEdit({ id: usersShow.user.id })" class="btn" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Edit Account</a>
       <input type="hidden" name="_method" value="DELETE">
       <button class="btn" ng-click="usersShow.delete()" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Delete Account</button>

@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <div class="carousel" uib-carousel active="productsIndex.active" interval="productsIndex.myInterval" no-wrap="productsIndex.noWrapSlides">
-  <div uib-slide ng-repeat="product in productsIndex.all" index="$index">
-    <img ng-src="{{product.imageSRC || product.image }}" style="margin:auto;">
-  </div>
-      <div uib-slide ng-repeat="product in productsIndex.all" index="$index">
-      <img ng-src="{{product.imageSRC}}" style="margin:auto;">
+      <div uib-slide ng-repeat="carousel in productsIndex.more" index="$index">
+      <img ng-src="{{ carousel.image}}" style="margin:auto;">
       </div>
 </div>
 <div class="row index">
