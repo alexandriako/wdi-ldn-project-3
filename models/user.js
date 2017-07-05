@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose-fill');
 const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 
@@ -11,7 +11,28 @@ const userSchema = new mongoose.Schema({
   description: { type: String }
 });
 
+userSchema
+  .virtual('outgoingOrders', {
+    ref: 'Order',
+    localField: '_id',
+    foreignField: 'createdBy'
+  });
 
+// talk about this in the presentation - for reals
+userSchema
+  .fill('incomingOrders') //virtual for getting any orders incoming
+  .get(function getIncomingOrders(done) {
+    this.model('Product') // look in the products model
+      .find({ createdBy: this._id }) //for any product's createdBy key that match current u id
+      .exec()
+      .then(products => { //then with that array
+        const productIds = products.map(product => product._id); //map pull out just their ids
+        return this.model('Order') //then look in the order model
+          .find({ 'products.product': { $in: productIds } }) //pull out any orders that have products that match the ids in the array
+          .populate('products.product') //show me the info
+          .exec(done);
+      });
+  });
 
 userSchema
   .virtual('passwordConfirmation')
