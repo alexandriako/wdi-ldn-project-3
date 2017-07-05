@@ -33,11 +33,11 @@ User
   passwordConfirmation: 'password',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 }, {
-  username: 'j-man',
+  username: 'SriLankanDenzel',
   email: 'jasontrk@hotmail.co.uk',
   password: 'password',
   passwordConfirmation: 'password',
-  description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  description: 'Mr Boombastic, say me fantastic.'
 }, {
   username: 'mikedg',
   email: 'mike@mike',
