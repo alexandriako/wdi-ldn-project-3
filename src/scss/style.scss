@@ -22,12 +22,12 @@
 }
 
 .carousel {
-  div {
-    height: 400px;
+  .carouselContain {
+    height: 450px;
   }
   img {
-    width: 500px;
-    height: 100%;
+    width: 100%;
+    align-content: center;
   }
 }
 
