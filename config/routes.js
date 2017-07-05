@@ -19,10 +19,10 @@ router.route('/products/:id')
 .put(imageUpload, products.update)
 .delete(products.delete);
 
-router.route('/user')
+router.route('/users')
 .get(users.index);
 
-router.route('/user/:id')
+router.route('/users/:id')
 .get(users.show)
 .put(secureRoute, imageUpload, users.update)
 .delete(secureRoute, users.delete);

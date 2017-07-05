@@ -18,6 +18,11 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   User
     .findById(req.params.id)
+    .populate({
+      path: 'outgoingOrders',
+      populate: { path: 'products.product' }
+    })
+    .fill('incomingOrders')
     .exec()
     .then((user) => {
       if(!user) return res.notFound();

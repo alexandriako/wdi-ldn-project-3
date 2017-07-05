@@ -1,7 +1,28 @@
 <!DOCTYPE html>
+<!-- <h1>{{ usersShow.user.outgoingOrders }}</h1> -->
+<h2>Outgoing Orders</h2>
+<div ng-repeat="order in usersShow.user.outgoingOrders">
+  <h3> Transaction Id: {{ order.transactionId }}</h3>
+  <div ng-repeat="product in order.products">
+    <h3> Product: {{ product.product.name }}</h3>
+    <h3> Shipped: {{ product.shipped }}</h3>
+  </div>
+</div>
+
+
+<h2>Incoming Orders</h2>
+<div ng-repeat="order in usersShow.user.incomingOrders">
+  <h3> Transaction Id: {{ order.transactionId }}</h3>
+  <div ng-repeat="product in order.products">
+    <h3> Product: {{ product.product.name }}</h3>
+    <h3> Shipped: {{ product.shipped }}</h3>
+  </div>
+</div>
+
 
 <div class="user" >
     <div class="image"><img class="img-fluid" ng-src="{{ usersShow.user.imageSRC }}"></div>
+
     <h1 class="title">{{ usersShow.user.username }}</h1>
     <h3>{{ usersShow.user.description }}</h3>
     <form>
@@ -20,3 +41,4 @@
   <h3>{{ product.name }}</h3>
   <h3>£ {{ product.price }}</h3>
 </div>
+<a ui-sref="productsNew" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.createdBy.id"><button class="btn btnNew">Sell</button></a>
