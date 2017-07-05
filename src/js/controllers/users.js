@@ -24,10 +24,12 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth) {
 
 
   function userDelete() {
-    $auth.logout();
     vm.user
     .$remove()
-    .then(() => $state.go('productsIndex'));
+    .then(() => {
+      $auth.logout();
+      $state.go('productsIndex');
+    });
   }
 
   vm.delete = userDelete;

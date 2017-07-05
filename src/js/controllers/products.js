@@ -7,14 +7,22 @@ angular
 .controller('ProductsDeleteCtrl', ProductsDeleteCtrl);
 
 
-ProductsIndexCtrl.$inject = ['Product'];
-function ProductsIndexCtrl(Product) {
+ProductsIndexCtrl.$inject = ['Product', 'Carousel'];
+function ProductsIndexCtrl(Product, Carousel) {
   const vm = this;
   vm.all = Product.query();
 
-  vm.myInterval = 5000;
-  vm.noWrapSlides = false;
-  vm.active = 0;
+  Carousel.query()
+    .$promise
+    .then(data =>{
+
+      vm.more = data;
+      vm.myInterval = 5000;
+      vm.noWrapSlides = false;
+      vm.active = 0;
+
+    });
+
 }
 
 
