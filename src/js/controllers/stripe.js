@@ -4,8 +4,8 @@ angular
 .module('wabisabiApp')
 .controller('StripeCtrl', StripeCtrl);
 
-StripeCtrl.$inject = ['$http', 'ngCart', '$stateParams', '$state', 'User'];
-function StripeCtrl($http, ngCart, $stateParams, $state, User) {
+StripeCtrl.$inject = ['$http', 'ngCart'];
+function StripeCtrl($http, ngCart) {
   var vm = this;
 
   vm.card = {};
@@ -14,43 +14,49 @@ function StripeCtrl($http, ngCart, $stateParams, $state, User) {
   vm.currency = 'gbp';
   vm.paymentSuccessful = false;
   vm.total = ngCart.totalCost();
-
+  // let savedRes = null;
 
   vm.pay = function pay() {
     Stripe.card.createToken(vm.card, (status, response) => {
+      // savedRes = response.id;
+      // console.log(vm.response.id);
       if(status === 200) {
         var data = {
           card: vm.card,
           token: response.id,
           amount: vm.total,
           currency: vm.currency,
-          payee: vm.payee
+          payee: vm.payee,
+          items: ngCart.getItems()
         };
+        console.log('This is the token response ', response );
 
-        console.log('This is the response ', response);
-
-        // console.log('Payee', vm.payee);
-        // console.log('amount', vm.amount);
         $http
         .post('/api/payment', data)
         .then(function(res) {
           vm.paymentSuccessful = (res.status === 200);
           ngCart.empty(true);
+          // orderCreate();
+
         });
       }
+
     });
 
 
 
 
-    vm.reset = function reset() {
-      vm.card = {};
-      vm.payee = '';
-      vm.amount = null;
-      vm.paymentSuccessful = false;
-      vm.Form.$setPristine(true);
-      // use vanilla JS to reset form to remove browser's native autocomplete highlighting
-      document.querySelector('form').reset();
-    };
+  };
+
+
+
+  vm.reset = function reset() {
+    vm.card = {};
+    vm.payee = '';
+    vm.amount = null;
+    vm.paymentSuccessful = false;
+    vm.Form.$setPristine(true);
+    // use vanilla JS to reset form to remove browser's native autocomplete highlighting
+    document.querySelector('form').reset();
   };
 }

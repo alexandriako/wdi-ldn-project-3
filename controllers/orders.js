@@ -3,15 +3,17 @@ const Order = require('../models/order');
 function orderIndexRoute(req, res, next) {
   Order
     .find(req.query)
+    .populate('products.product')
     .exec()
     .then((orders) => res.json(orders))
     .catch(next);
 }
 
 function orderCreateRoute(req, res, next) {
-
   // if(req.file) req.body.image = req.file.filename;
   // req.body.createdBy = req.user;
+  if(req.file) req.body.image = req.file.filename;
+  req.body.createdBy = req.user;
 
   Order
     .create(req.body)
