@@ -35,7 +35,7 @@ function ProductsNewCtrl(Product, $state) {
 }
 
 ProductsShowCtrl.$inject = ['Product', '$stateParams', '$state', '$uibModal', '$http'];
-function ProductsShowCtrl(Product, $stateParams, $state, $uibModal) {
+function ProductsShowCtrl(Product, $stateParams, $state, $http, $uibModal) {
   const vm = this;
 
   Product.get($stateParams)
@@ -89,11 +89,11 @@ function ProductsDeleteCtrl($uibModalInstance, currentProduct, $state) {
 
   function productsDelete() {
     vm.product
-    .$remove()
-    .then(() => {
-      $state.go('productsIndex');
-      $uibModalInstance.close();
-    });
+      .$remove()
+      .then(() => {
+        $state.go('productsIndex');
+        $uibModalInstance.close();
+      });
   }
 
   vm.delete = productsDelete;

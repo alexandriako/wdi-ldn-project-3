@@ -6,6 +6,7 @@ const orders = require('../controllers/orders');
 const stripe = require('../controllers/stripe');
 const imageUpload = require('../lib/imageUpload');
 const secureRoute = require('../lib/secureRoute');
+const oauth = require('../controllers/oauth');
 
 router.route('/products')
 .get(products.index)
@@ -14,7 +15,7 @@ router.route('/products')
 router.route('/products/:id')
 .all(secureRoute)
 .get(products.show)
-.put(products.update)
+.put(imageUpload, products.update)
 .delete(products.delete);
 
 router.route('/users')
@@ -22,7 +23,7 @@ router.route('/users')
 
 router.route('/users/:id')
 .get(users.show)
-.put(secureRoute, users.update)
+.put(secureRoute, imageUpload, users.update)
 .delete(secureRoute, users.delete);
 
 router.route('/orders')
@@ -39,6 +40,9 @@ router.route('/register')
 
 router.route('/login')
   .post(auth.login);
+
+router.route('/oauth/instagram')
+  .post(oauth.instagram);
 
 
 router.all('/*', (req, res) => res.notFound());
