@@ -72,7 +72,7 @@
           <td></td>
           <td></td>
           <td>Total:
-          <td>{{ ngCart.totalCost() | currency: "£" }}</td>
+          <td>{{ ngCart.totalCost() - ngCart.getTax()| currency: "£" }}</td>
         </tr>
       </tfoot>
       <tbody>
