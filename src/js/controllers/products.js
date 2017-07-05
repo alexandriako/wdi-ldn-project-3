@@ -34,7 +34,7 @@ function ProductsNewCtrl(Product, $state) {
   vm.create = productsCreate;
 }
 
-ProductsShowCtrl.$inject = ['Product', '$stateParams', '$state', '$uibModal', '$http'];
+ProductsShowCtrl.$inject = ['Product', '$stateParams', '$state', '$http', '$uibModal'];
 function ProductsShowCtrl(Product, $stateParams, $state, $http, $uibModal) {
   const vm = this;
 
@@ -57,7 +57,7 @@ function ProductsShowCtrl(Product, $stateParams, $state, $http, $uibModal) {
     });
   }
 
-  vm.open = openModal;
+  vm.openModal = openModal;
 
 }
 
