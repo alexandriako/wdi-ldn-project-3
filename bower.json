@@ -23,7 +23,8 @@
     "angular-bootstrap": "^2.5.0",
     "satellizer": "^0.15.5",
     "angular-animate": "^1.6.4",
-    "ngCart": "ngcart#^1.0.0"
+    "ngCart": "ngcart#^1.0.0",
+    "angular-material-icons": "^0.7.1"
   },
   "resolutions": {
     "angular": "^1.6.4"

@@ -2,7 +2,6 @@
 <div class="login">
   <div>
     <h2>Log in</h2>
-    <fa name="cog" animation="spin"></fa>
     <form name="login.loginForm" ng-submit="login.submit()" novalidate>
       <div>
         <label for="email">Email</label>
@@ -26,6 +25,7 @@
 
     </form>
 
-    <button ng-click="login.authenticate('instagram')">Login with Instagram</button>
+    <span><ng-md-icon icon="login" style="fill: purple" size="40"></ng-md-icon></span><button ng-click="login.authenticate('instagram')">Login with Instagram</button>
+
   </div>
 </div>

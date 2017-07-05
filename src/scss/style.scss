@@ -12,6 +12,12 @@
 
 .navbar {
   background-color: white;
+  .navbar-header {
+    a {
+      margin: 30px auto;
+      font-size: 50px;
+    }
+  }
   .navbar-brand {
     font-family: 'Aqua';
     font-size: 28px;
@@ -20,6 +26,7 @@
     float: right;
     text-align: center;
     font-size: 16px;
+    margin: 30px auto;
   }
 }
 

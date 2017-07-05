@@ -1,6 +1,6 @@
 /* global Stripe */
 angular
-  .module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer', 'ui.bootstrap', 'ngAnimate', 'ngMessages', 'ngCart'])
+  .module('wabisabiApp', ['ui.router', 'ngResource', 'satellizer', 'ui.bootstrap', 'ngAnimate', 'ngMessages', 'ngCart', 'ngMdIcons'])
   .controller('cartCtrl', ['$scope', '$http', 'ngCart', function($scope, $http, ngCart) {
     ngCart.setTaxRate(20);
     ngCart.setShipping(4.99);
