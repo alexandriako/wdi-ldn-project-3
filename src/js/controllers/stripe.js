@@ -6,6 +6,7 @@ angular
 
 StripeCtrl.$inject = ['$http', 'ngCart'];
 function StripeCtrl($http, ngCart) {
+
   var vm = this;
 
   vm.card = {};
@@ -29,7 +30,7 @@ function StripeCtrl($http, ngCart) {
           payee: vm.payee,
           items: ngCart.getItems()
         };
-        console.log('This is the token response ', response );
+
 
         $http
         .post('/api/payment', data)

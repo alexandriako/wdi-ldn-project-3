@@ -17,18 +17,17 @@
     font-size: 28px;
   }
   ul {
+    float: right;
+    text-align: center;
     font-size: 16px;
   }
 }
 
 .carousel {
-  .carouselContain {
-    height: 450px;
-  }
+
   img {
     width: 100%;
-    align-content: center;
-  }
+}
 }
 
 .index {
@@ -41,8 +40,7 @@
     padding: 10px auto;
     text-align: center;
     img {
-      width: 500px;
-      height: 100%;
+      width: 100%;
     }
   }
 }
@@ -55,4 +53,12 @@
 
 .image {
   text-align: center;
+}
+
+@media (max-width: 778px) {
+    .navbar {
+      ul{
+        float: none;
+      }
+    }
 }

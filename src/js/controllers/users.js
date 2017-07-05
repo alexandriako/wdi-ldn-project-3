@@ -19,7 +19,6 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth) {
     vm.user = user;
     vm.orders = Order.query({ createdBy: $stateParams.id });
     vm.products = Product.query({ createdBy: user.id });
-    console.log(vm.user);
   });
 
 

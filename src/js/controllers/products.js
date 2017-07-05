@@ -91,15 +91,17 @@ function ProductsDeleteCtrl($uibModalInstance, currentProduct, $state) {
 
   function closeModal() {
     $uibModalInstance.close();
+    console.log(currentProduct.createdBy.id);
   }
 
   vm.close = closeModal;
 
   function productsDelete() {
+
     vm.product
       .$remove()
       .then(() => {
-        $state.go('productsIndex');
+        $state.go( 'productsIndex' );
         $uibModalInstance.close();
       });
   }
