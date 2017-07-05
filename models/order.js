@@ -6,7 +6,8 @@ const orderSchema = new mongoose.Schema({
   transactionId: { type: String },
   products: [{
     product: { type: mongoose.Schema.ObjectId, ref: 'Product', required: true},
-    quantity: { type: Number } //the item's createdBy id number
+    quantity: { type: Number }, //the item's createdBy id number
+    shipped: { type: Boolean, default: false }
   }]
 });
 
