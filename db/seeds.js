@@ -6,11 +6,11 @@ mongoose.connect(dbURI);
 
 const User = require('../models/user');
 const Product = require('../models/product');
-
-
+const Order = require('../models/order');
 
 User.collection.drop();
 Product.collection.drop();
+Order.collection.drop();
 
 User
 .create([{

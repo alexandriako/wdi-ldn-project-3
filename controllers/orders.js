@@ -9,17 +9,15 @@ function orderIndexRoute(req, res, next) {
     .catch(next);
 }
 
-function orderCreateRoute(req, res, next) {
-  // if(req.file) req.body.image = req.file.filename;
-  // req.body.createdBy = req.user;
-  if(req.file) req.body.image = req.file.filename;
-  req.body.createdBy = req.user;
-
-  Order
-    .create(req.body)
-    .then((order) => res.status(201).json(order))
-    .catch(next);
-}
+// function orderCreateRoute(req, res, next) {
+//
+//   req.body.createdBy = req.user;
+//
+//   Order
+//     .create(req.body)
+//     .then((order) => res.status(201).json(order))
+//     .catch(next);
+// }
 
 function orderShowRoute(req, res, next) {
   Order
@@ -36,6 +34,6 @@ function orderShowRoute(req, res, next) {
 
 module.exports = {
   index: orderIndexRoute,
-  create: orderCreateRoute,
+  // create: orderCreateRoute,
   show: orderShowRoute
 };
