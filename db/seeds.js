@@ -68,15 +68,15 @@ User
   console.log(`${users.length} users created`);
   return Carousel
   .create([{
-    image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
-    description: 'Born in LA and raised in Tokyo, I am an avid collector of vintage jewelry and handmade pieces. On the side I like to peruse for hidden gems at thrift stores. Recently my partner and I launched our own fashion label.'
+    image: '/images/carousel1.jpg',
+    description: 'Text.'
   },{
-    image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
-    description: 'Born in LA and raised in Tokyo, I am an avid collector of vintage jewelry and handmade pieces. On the side I like to peruse for hidden gems at thrift stores. Recently my partner and I launched our own fashion label.'
+    image: '/images/carousel2.jpg',
+    description: 'Text1.'
   }
   , {
-    image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
-    description: 'Born in LA and raised in Tokyo, I am an avid collector of vintage jewelry and handmade pieces. On the side I like to peruse for hidden gems at thrift stores. Recently my partner and I launched our own fashion label.'
+    image: '/images/carousel3.jpg',
+    description: 'Text2.'
   }
   ])
   .then((carousels) => {
