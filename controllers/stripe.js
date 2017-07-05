@@ -17,7 +17,7 @@ function processPayment(req, res, next) {
       return { product: item._id, quantity: item._quantity };
     });
 
-    console.log(req.body);
+    // console.log(req.body);
     Order
     .create({
       createdBy: req.user,
