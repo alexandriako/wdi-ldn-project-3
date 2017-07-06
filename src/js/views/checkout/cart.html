@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<h3>Cart</h3>
 
-
-
+<div class="cart">
 <ngcart-cart></ngcart-cart>
 
 <hr/>
@@ -96,8 +94,13 @@
 
   <script type="text/ng-template" id="template/ngCart/checkout.html">
 
+<<<<<<< HEAD
+    <div class="button" ng-if="service == 'log'">
+      <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
+=======
     <div ng-if="service == 'log'">
       <button class="btn btn-primary" ng-transclude>Checkout</button>
+>>>>>>> 67f52a25d292da4a7e55ba8c738d356c42480c6f
     </div>
 
 
@@ -126,3 +129,4 @@
     </div>
 
   </script>
+</div>

@@ -48,7 +48,7 @@
       "scss": "**/*.scss",
       "html": "**/*.html",
       "images": "**/*.{png,jpg,jpeg,gif,ico}",
-      "fonts": "**/*.{eot,svg,ttf,woff,woff2}"
+      "fonts": "**/*.{eot,svg,ttf,woff,woff2,otf}"
     }
   },
   "dependencies": {

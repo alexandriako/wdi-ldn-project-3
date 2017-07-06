@@ -12,38 +12,37 @@
 -->
 
  <div class="new">
-  <div>
     <h2>Sell</h2>
     <form name="productsNew.newForm" ng-submit="productsNew.create()" novalidate>
-      <div>
+      <div class="section">
         <label for="image">Image</label>
         <input base64 type="file" name="image" id="image" ng-model="productsNew.product.base64" required>
         <div ng-messages="productsNew.newForm.base64.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.base64.$touched) && productsNew.newForm.base64.$invalid" class="error">
           <div ng-message="required">Image is required.</div>
         </div>
       </div>
-      <div>
+      <div class="section">
         <label for="category">Category</label>
         <input type="text" name="category" id="category" ng-model="productsNew.product.category" required>
         <div ng-messages="productsNew.newForm.category.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.category.$touched) && productsNew.newForm.category.$invalid" class="error">
           <div ng-message="required">Caption is required.</div>
         </div>
       </div>
-      <div>
+      <div class="section">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" ng-model="productsNew.product.name" required>
         <div ng-messages="productsNew.newForm.name.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.name.$touched) && productsNew.newForm.name.$invalid" class="error">
           <div ng-message="required">Name is required.</div>
         </div>
       </div>
-      <div>
+      <div class="section">
         <label for="price">Price</label>
         <input type="text" name="price" id="price" ng-model="productsNew.product.price" required>
         <div ng-messages="productsNew.newForm.price.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.price.$touched) && productsNew.newForm.price.$invalid" class="error">
           <div ng-message="required">Price is required.</div>
         </div>
       </div>
-      <div>
+      <div class="section">
         <label for="description">Description</label>
         <input type="text" name="description" id="description" ng-model="productsNew.product.description" required>
         <div ng-messages="productsNew.newForm.description.$error" role="alert" ng-show="(productsNew.newForm.$submitted || productsNew.newForm.description.$touched) && productsNew.newForm.description.$invalid" class="error">
@@ -53,5 +52,4 @@
 
       <button class="button">Create</button>
     </form>
-  </div>
 </div>
