@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <div class="carousel" uib-carousel active="productsIndex.active" interval="productsIndex.myInterval" no-wrap="productsIndex.noWrapSlides">
-      <div uib-slide ng-repeat="carousel in productsIndex.more" index="$index" class="carouselContain">
-        <img ng-src="{{ carousel.image}}">
-      </div>
+  <div uib-slide ng-repeat="carousel in productsIndex.more" index="$index" class="carouselContain">
+    <img ng-src="{{ carousel.image}}">
+  </div>
 </div>
 <div class="row index">
-  <div><input type="text" class="search" ng-model="productsIndex.q" placeholder="Search..."></div>
-  <div ng-repeat="product in productsIndex.all | filter: productsIndex.q" class="col-lg-4 col-md-6 col-sm-12">
-    <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC
-    }}" class="img-responsive"></a></div>
+
+
+
+  <div id="filters" class="button-group">
+    <button class="button" ng-click="productsIndex.setCategory()">All Products</button>
+    <button class="button" ng-click="productsIndex.setCategory('Home & Living')">Home & Living</button>
+    <button class="button" ng-click="productsIndex.setCategory('Fashion')">Fashion</button>
+    <button class="button" ng-click="productsIndex.setCategory('Crafts')">Crafts</button>
+    <button class="button" ng-click="productsIndex.setCategory('Kids')">Kids</button>
+    <button class="button" ng-click="productsIndex.setCategory('Art & Collectibles')">Art & Collectibles</button>
+    <button class="button" ng-click="productsIndex.setCategory('Entertainment')">Entertainment</button>
+  </div>
+
+
+  <div>
+    <input type="text" class="search" ng-model="productsIndex.q" placeholder="Search...">
+  </div>
+
+  <div ng-repeat="product in productsIndex.all | filter: { category: productsIndex.category } | filter: productsIndex.q" class="col-lg-4 col-md-6 col-sm-12">
+    <div class="image">
+      <a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC }}" class="img-responsive"></a>
+  </div>
   </div>
 </div>

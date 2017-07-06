@@ -12,6 +12,13 @@ function ProductsIndexCtrl(Product, Carousel) {
   const vm = this;
   vm.all = Product.query();
 
+  function setCategory(category) {
+    vm.category = category;
+    vm.q = '';
+  }
+
+  vm.setCategory = setCategory;
+
   Carousel.query()
     .$promise
     .then(data =>{
@@ -94,12 +101,13 @@ function ProductsDeleteCtrl($uibModalInstance, currentProduct, $state) {
   }
 
   vm.close = closeModal;
+  const storage = currentProduct.createdBy.id;
 
   function productsDelete() {
     vm.product
       .$remove()
       .then(() => {
-        $state.go('productsIndex');
+        $state.go(`'usersShow({ id: ${storage} })'`);
         $uibModalInstance.close();
       });
   }
