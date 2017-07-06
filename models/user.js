@@ -69,7 +69,6 @@ userSchema.pre('save', function checkPreviousImage(next) {
 });
 
 
-
 userSchema.pre('validate', function checkPassword(next) {
   if(!this.password && !this.instagramId) {
     this.invalidate('password', 'required');

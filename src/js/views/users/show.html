@@ -28,10 +28,16 @@
 <h2>Incoming Orders</h2>
 <div ng-repeat="order in usersShow.user.incomingOrders">
   <h3> Transaction Id: {{ order.transactionId }}</h3>
+  <h3> Shipping Address Line 1 ------         {{ order.createdBy.addressLineOne }}</h3>
+  <h3> Shipping Address Line 2 -----        {{ order.createdBy.addressLineTwo }}</h3>
+  <h3> Shipping Address city   --------        {{ order.createdBy.city }}</h3>
+  <h3> Shipping Address Post Code       {{ order.createdBy.postCode }}</h3>
   <div ng-repeat="product in order.products">
     <h3> Product: {{ product.product.name }}</h3>
     <h3> Shipped: {{ product.shipped }}</h3>
+      <button type="button" ng-click="usersShow.markAsShipped(order, product)"></button>
   </div>
+
 </div>
 
 <hr>

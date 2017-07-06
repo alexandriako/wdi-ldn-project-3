@@ -12,8 +12,9 @@ function UsersIndexCtrl(User) {
   vm.all = User.query();
 }
 
-UsersShowCtrl.$inject = ['User', 'Product', 'Order', '$stateParams', '$state', '$auth', '$uibModal'];
-function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth, $uibModal) {
+UsersShowCtrl.$inject = ['User', 'Product', 'Order', '$stateParams', '$state', '$auth', '$uibModal', 'OrderProduct'];
+function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth, $uibModal, OrderProduct) {
+
   const vm = this;
 
   User.get($stateParams, (user)=>{
@@ -33,9 +34,20 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth, $uibMo
       }
     });
   }
-
   vm.openModal = openModal;
 
+
+  function markAsShipped(order, product){
+    console.log(order, product);
+    OrderProduct
+      .update({ orderId: order.id, id: product.id })
+      .$promise
+      .then(() => {
+        product.shipped = !product.shipped;
+
+      });
+  }
+  vm.markAsShipped = markAsShipped;
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
@@ -46,8 +58,8 @@ function UsersEditCtrl(User, $stateParams, $state) {
 
   function usersUpdate() {
     vm.user
-      .$update()
-      .then(() => $state.go('usersShow', $stateParams));
+    .$update()
+    .then(() => $state.go('usersShow', $stateParams));
   }
 
   vm.update = usersUpdate;
