@@ -11,8 +11,8 @@ function UsersIndexCtrl(User) {
   vm.all = User.query();
 }
 
-UsersShowCtrl.$inject = ['User', 'Product', 'Order', '$stateParams', '$state', '$auth'];
-function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth) {
+UsersShowCtrl.$inject = ['User', 'Product', 'Order', 'OrderProduct', '$stateParams', '$state', '$auth'];
+function UsersShowCtrl(User, Product, Order, OrderProduct, $stateParams, $state, $auth) {
   const vm = this;
 
   User.get($stateParams, (user)=>{
@@ -21,6 +21,19 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth) {
     vm.products = Product.query({ createdBy: user.id });
     console.log(vm.user);
   });
+
+  function markAsShipped(order, product){
+    console.log(order, product);
+    OrderProduct
+      .update({ orderId: order.id, id: product.id })
+      .$promise
+      .then(() => {
+        product.shipped = !product.shipped;
+      });
+
+  }
+
+  vm.markAsShipped = markAsShipped;
 
 
   function userDelete() {
@@ -41,8 +54,8 @@ function UsersEditCtrl(User, $stateParams, $state) {
 
   function usersUpdate() {
     vm.user
-      .$update()
-      .then(() => $state.go('usersShow', $stateParams));
+    .$update()
+    .then(() => $state.go('usersShow', $stateParams));
   }
 
   vm.update = usersUpdate;

@@ -32,6 +32,9 @@ router.route('/orders')
 router.route('/orders/:id')
   .get(orders.show);
 
+router.route('/orders/:id/products/:productId')
+  .put(orders.update);
+
 router.route('/payment')
   .post(secureRoute, stripe.processPayment);
 

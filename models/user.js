@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   instagramId: { type: Number },
   password: { type: String },
-  description: { type: String }
+  description: { type: String },
+  addressLineOne: { type: String },
+  addressLineTwo: { type: String },
+  city: { type: String },
+  postCode: { type: String }
 });
 
 userSchema
@@ -29,7 +33,7 @@ userSchema
         const productIds = products.map(product => product._id); //map pull out just their ids
         return this.model('Order') //then look in the order model
           .find({ 'products.product': { $in: productIds } }) //pull out any orders that have products that match the ids in the array
-          .populate('products.product') //show me the info
+          .populate('products.product createdBy') //show me the info
           .exec(done);
       });
   });
