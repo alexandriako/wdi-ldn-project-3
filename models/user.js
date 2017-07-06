@@ -53,6 +53,21 @@ userSchema.pre('remove', function removeImage(next) {
   s3.deleteObject({ Key: this.image }, next);
 });
 
+userSchema
+  .path('image')
+  .set(function getPreviousImage(image) {
+    this._image = this.image;
+    return image;
+  });
+
+
+userSchema.pre('save', function checkPreviousImage(next) {
+  if(this.isModified('image') && this._image) {
+    return s3.deleteObject({ Key: this._image }, next);
+  }
+  next();
+});
+
 
 userSchema.pre('validate', function checkPassword(next) {
   if(!this.password && !this.instagramId) {

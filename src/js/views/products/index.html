@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <div class="carousel" uib-carousel active="productsIndex.active" interval="productsIndex.myInterval" no-wrap="productsIndex.noWrapSlides">
+
   <div uib-slide ng-repeat="carousel in productsIndex.more" index="$index" class="carouselContain">
-    <img ng-src="{{ carousel.image}}">
+    <img ng-src="{{ carousel.image}}" class="img-responsive">
   </div>
 </div>
 <div class="row index">
-
-
 
   <div id="filters" class="button-group">
     <button class="button" ng-click="productsIndex.setCategory()">All Products</button>
@@ -26,6 +25,6 @@
   <div ng-repeat="product in productsIndex.all | filter: { category: productsIndex.category } | filter: productsIndex.q" class="col-lg-4 col-md-6 col-sm-12">
     <div class="image">
       <a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC }}" class="img-responsive"></a>
-  </div>
+    </div>
   </div>
 </div>

@@ -33,11 +33,14 @@ router.route('/orders')
 router.route('/orders/:id')
   .get(orders.show);
 
+router.route('/orders/:id/products/:productId')
+  .put(orders.update);
+
 router.route('/payment')
   .post(secureRoute, stripe.processPayment);
 
 router.route('/register')
-  .post(auth.register);
+  .post(imageUpload, auth.register);
 
 router.route('/login')
   .post(auth.login);

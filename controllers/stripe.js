@@ -29,6 +29,7 @@ function processPayment(req, res, next) {
     if(err) {
       return res.status(500).json({ message: err });
     }
+    console.log(req.user);
     res.status(200).json({ message: 'Payment successful' });
   })
   .catch(next);

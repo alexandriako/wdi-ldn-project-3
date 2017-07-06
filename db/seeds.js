@@ -20,48 +20,72 @@ Order.collection.drop();
 User
 .create([{
   username: 'origamiChick',
-  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
+  image: '/images/default.png',
   email: 'alexandriako@yahoo.com',
   password: '123',
   passwordConfirmation: '123',
-  description: 'Born in LA and raised in Tokyo, I am an avid collector of vintage jewelry and handmade pieces. On the side I like to peruse for hidden gems at thrift stores. Recently my partner and I launched our own fashion label.'
+  description: 'Born in LA and raised in Tokyo, I am an avid collector of vintage jewelry and handmade pieces. On the side I like to peruse for hidden gems at thrift stores. Recently my partner and I launched our own fashion label.',
+  addressLineOne: '123 Madeup Road',
+  addressLineTwo: 'Some Place',
+  city: 'London',
+  postCode: 'E13 84H'
 },{
   username: 'alexandriako',
-  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
+  image: '/images/default.png',
   email: 'alexandriamhko@gmail.com',
   password: '123',
   passwordConfirmation: '123',
-  description: 'Having graduated in graphic design, I currently dabble in graphic design, tattoo designs, and prints. My other passion is for furniture and interior design.'
+  description: 'Having graduated in graphic design, I currently dabble in graphic design, tattoo designs, and prints. My other passion is for furniture and interior design.',
+  addressLineOne: '321 Its a Street',
+  addressLineTwo: 'A location',
+  city: 'Brighton',
+  postCode: 'BN3 4JS'
 }
 , {
   username: 'lunchbox',
-  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
+  image: '/images/default.png',
   email: 'jasontrk12@gmail.com',
   password: 'password',
   passwordConfirmation: 'password',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  addressLineOne: '45678 Something Close',
+  addressLineTwo: 'An Area',
+  city: 'Donny',
+  postCode: 'DN4 142'
 }, {
 
   username: 'SriLankanDenzel',
-  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
+  image: '/images/default.png',
   email: 'jasontrk@hotmail.co.uk',
   password: 'password',
   passwordConfirmation: 'password',
-  description: 'Mr Boombastic, say me fantastic.'
+  description: 'Mr Boombastic, say me fantastic.',
+  addressLineOne: '12 Random Street',
+  addressLineTwo: 'Vibeland',
+  city: 'Slough',
+  postCode: 'SL4 142'
 }, {
   username: 'mikedg',
-  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
+  image: '/images/default.png',
   email: 'mike@mike',
   password: 'password',
   passwordConfirmation: 'password',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  addressLineOne: '87 Anywhere',
+  addressLineTwo: 'Never Town',
+  city: 'Edinbouroughrough',
+  postCode: 'EN6 142'
 }, {
   username: 'jack',
-  image: 'http://www.oldpotterybarn.co.uk/wp-content/uploads/2015/06/default-medium.png',
+  image: '/images/default.png',
   email: 'jack@jack',
   password: 'password',
   passwordConfirmation: 'password',
-  description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  addressLineOne: '87 Somewhere',
+  addressLineTwo: 'Over The Rainbow',
+  city: 'Grimsby',
+  postCode: 'GRIM 64'
 }
 ])
 .then((users) => {
