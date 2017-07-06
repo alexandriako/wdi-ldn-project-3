@@ -30,6 +30,7 @@
   font-family: 'Karla', sans-serif;
 }
 
+
 .image {
   text-align: center;
 }
@@ -80,7 +81,7 @@
     margin: 20px auto;
   }
   .image {
-    margin: 10px 20px;
+    margin: 30px 20px;
     padding: 10px auto;
     img {
       width: 100%;
@@ -127,10 +128,80 @@
     font-family: 'komodaregular';
     border-style: solid;
     text-align: center;
+    font-size: 30px;
   }
   .section {
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+  .button {
+    margin: 10px 10px;
+    border-radius: 2px;
+    color: white;
+    padding: 5px;
+    border: 2px solid;
+    font-size: 18px;
+  }
+}
+
+.login {
+  height: 100%;
+  h2 {
+    font-family: 'komodaregular';
+    border-style: solid;
+    text-align: center;
+    font-size: 30px;
+  }
+  .section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .button {
+    margin: 30px;
+    margin: 10px 10px;
+    border-radius: 2px;
+    color: white;
+    padding: 5px;
+    border: 2px solid shadow;
+    font-size: 18px;
+  }
+  #instagram {
+    text-align: center;
+    button {
+      margin: 30px;
+      margin: 10px 10px;
+      border-radius: 2px;
+      color: white;
+      padding: 5px;
+      border: 2px solid shadow;
+      font-size: 18px;
+    }
+  }
+}
+
+.register {
+  height: 100%;
+  .section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .button {
+    margin: 30px;
+    margin: 10px 10px;
+    border-radius: 2px;
+    color: white;
+    padding: 5px;
+    border: 2px solid shadow;
+    font-size: 18px;
+  }
+  #image {
+    margin: 30px;
+    margin: 10px 10px;
+    border-radius: 2px;
+    color: white;
+    padding: 5px;
+    border: 2px solid shadow;
+    font-size: 18px;
   }
 }
 
@@ -149,6 +220,7 @@
 .cart {
   .button {
     text-align: center;
+
   }
 }
 

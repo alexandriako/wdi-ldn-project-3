@@ -4,7 +4,7 @@
   <div>
     <h2>Register</h2>
     <form name="register.registerForm" ng-submit="register.submit()" novalidate>
-      <div>
+      <div class="section">
         <label for="username">Username</label>
         <input type="text" name="username" id="username" ng-model="register.user.username" required>
         <div ng-messages="register.registerForm.username.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched) && register.registerForm.username.$invalid" class="error">
@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="register.user.email" required>
         <div ng-messages="register.registerForm.email.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched) && register.registerForm.email.$invalid" class="error">
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ng-model="register.user.password" required>
         <div ng-messages="register.registerForm.password.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched) && register.registerForm.password.$invalid" class="error">
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="passwordConfirmation">Password Confirmation</label>
         <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
         <div ng-messages="register.registerForm.passwordConfirmation.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched) && register.registerForm.passwordConfirmation.$invalid" class="error">
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="addressLineOne">Address Line 1</label>
         <input type="text" name="addressLineOne" id="addressLineOne" ng-model="register.user.addressLineOne" required>
         <div ng-messages="register.registerForm.addressLineOne.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.addressLineOne.$touched) && register.registerForm.addressLineOne.$invalid" class="error">
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="addressLineTwo">Address Line 2</label>
         <input type="text" name="addressLineTwo" id="addressLineTwo" ng-model="register.user.addressLineTwo" required>
         <div ng-messages="register.registerForm.addressLineTwo.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.addressLineTwo.$touched) && register.registerForm.addressLineTwo.$invalid" class="error">
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="city">City</label>
         <input type="text" name="city" id="city" ng-model="register.user.city" required>
         <div ng-messages="register.registerForm.city.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.city.$touched) && register.registerForm.city.$invalid" class="error">
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="postCode">Post code</label>
         <input type="text" name="postCode" id="postCode" ng-model="register.user.postCode" required>
         <div ng-messages="register.registerForm.postCode.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.postCode.$touched) && register.registerForm.postCode.$invalid" class="error">
@@ -69,12 +69,12 @@
         </div>
       </div>
 
-      <div>
+      <div class="section">
         <label for="description">Description [not required]</label>
         <input type="text" name="description" id="description" ng-model="register.user.description">
       </div>
 
-      <div>
+      <div class="section">
         <label for="image">Image</label>
         <input base64 type="file" name="image" id="image" ng-model="register.user.base64" required>
         <div ng-messages="register.registerForm.base64.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.base64.$touched) && register.registerForm.base64.$invalid" class="error">
