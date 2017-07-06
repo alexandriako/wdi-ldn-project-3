@@ -11,6 +11,7 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="register.user.email" required>
@@ -19,6 +20,7 @@
           <div ng-message="email">This field must be a valid email address.</div>
         </div>
       </div>
+
       <div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ng-model="register.user.password" required>
@@ -26,22 +28,61 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
-      <label for="passwordConfirmation">Password Confirmation</label>
-      <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
-      <div ng-messages="register.registerForm.passwordConfirmation.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched) && register.registerForm.passwordConfirmation.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
-      </div>
-    </div>
-    <div>
-      <label for="image">Image</label>
-      <input base64 type="file" name="image" id="image" ng-model="register.user.base64" required>
-      <div ng-messages="register.registerForm.base64.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.base64.$touched) && register.registerForm.base64.$invalid" class="error">
-        <div ng-message="required">Please enter a value for this field.</div>
+        <label for="passwordConfirmation">Password Confirmation</label>
+        <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
+        <div ng-messages="register.registerForm.passwordConfirmation.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched) && register.registerForm.passwordConfirmation.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
       </div>
 
-      <!-- <img ng-src="{{ usersRegister.user.base64 }}"> -->
-    </div>
+      <div>
+        <label for="addressLineOne">Address Line 1</label>
+        <input type="text" name="addressLineOne" id="addressLineOne" ng-model="register.user.addressLineOne" required>
+        <div ng-messages="register.registerForm.addressLineOne.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.addressLineOne.$touched) && register.registerForm.addressLineOne.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="addressLineTwo">Address Line 2</label>
+        <input type="text" name="addressLineTwo" id="addressLineTwo" ng-model="register.user.addressLineTwo" required>
+        <div ng-messages="register.registerForm.addressLineTwo.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.addressLineTwo.$touched) && register.registerForm.addressLineTwo.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" ng-model="register.user.city" required>
+        <div ng-messages="register.registerForm.city.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.city.$touched) && register.registerForm.city.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="postCode">Post code</label>
+        <input type="text" name="postCode" id="postCode" ng-model="register.user.postCode" required>
+        <div ng-messages="register.registerForm.postCode.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.postCode.$touched) && register.registerForm.postCode.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="description">Description [not required]</label>
+        <input type="text" name="description" id="description" ng-model="register.user.description">
+      </div>
+
+      <div>
+        <label for="image">Image</label>
+        <input base64 type="file" name="image" id="image" ng-model="register.user.base64" required>
+        <div ng-messages="register.registerForm.base64.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.base64.$touched) && register.registerForm.base64.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+
+        <img ng-src="{{ register.user.base64 }}">
+      </div>
 
 
       <button class="button">Register</button>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
 <div ng-repeat="user in usersIndex.all">
-  <div class="image"><a ui-sref="usersShow({ id: user.id })"><img ng-src="{{ user.image }}" class="img-responsive"></a></div>
+  <div class="image"><a ui-sref="usersShow({ id: user.id })"><img ng-src="{{ user.imageSRC }}" class="img-responsive"></a></div>
   <h2>{{ user.username }}</h2>
 </div>

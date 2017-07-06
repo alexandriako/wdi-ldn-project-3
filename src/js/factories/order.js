@@ -12,7 +12,7 @@ function Order($resource) {
 
 OrderProduct.$inject = ['$resource'];
 function OrderProduct($resource) {
-  return new $resource('/api/orders/:orderId/products/:id', { id: '@id' }, {
-    update: { method: 'PUT', params: { id: '@id', orderId: '@orderId' } }
+  return new $resource('/api/orders/:orderId/products/:id', { id: '@id', orderId: '@orderId' }, {
+    update: { method: 'PUT' }
   });
 }

@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   instagramId: { type: Number },
   password: { type: String },
-  description: { type: String }
+  description: { type: String },
+  addressLineOne: { type: String, required: true },
+  addressLineTwo: { type: String, required: true },
+  city: { type: String, required: true },
+  postCode: { type: String, required: true }
 });
 
 userSchema
@@ -29,7 +33,7 @@ userSchema
         const productIds = products.map(product => product._id); //map pull out just their ids
         return this.model('Order') //then look in the order model
           .find({ 'products.product': { $in: productIds } }) //pull out any orders that have products that match the ids in the array
-          .populate('products.product') //show me the info
+          .populate('products.product createdBy') //show me the info
           .exec(done);
       });
   });
@@ -44,7 +48,7 @@ userSchema
   .virtual('imageSRC')
   .get(function getImageSRC() {
     if(!this.image) return null;
-    if(this.image.match(/^http/)) return this.image;
+    if(this.image.match(/^http/) || this.image.substring(0,6) === '/image' ) return this.image;
     return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${this.image}`;
   });
 
