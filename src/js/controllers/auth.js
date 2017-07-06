@@ -22,8 +22,8 @@ function RegisterCtrl($auth, $state, $rootScope) {
   vm.submit = submit;
 }
 
-LoginCtrl.$inject = ['$auth', '$state', '$rootScope'];
-function LoginCtrl($auth, $state, $rootScope) {
+LoginCtrl.$inject = ['$auth', '$state', '$rootScope', 'User'];
+function LoginCtrl($auth, $state, $rootScope, User) {
   const vm = this;
   vm.credentials = {};
 
@@ -45,7 +45,13 @@ function LoginCtrl($auth, $state, $rootScope) {
     $auth.authenticate(provider)
       .then((res) => {
         $rootScope.$broadcast('message', res.data.message);
-        $state.go('productsIndex');
+        const userId = $auth.getPayload().userId;
+        const user = User.get({ id: userId });
+        if (!user.addressLineOne || !user.addressLineTwo || !user.postCode || !user.city) {
+          return $state.go('usersEdit', { id: userId });
+        } else {
+          $state.go('productsIndex');
+        }
       })
       .catch(() => $state.go('login'));
   }

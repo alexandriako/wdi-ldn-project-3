@@ -9,10 +9,10 @@ const userSchema = new mongoose.Schema({
   instagramId: { type: Number },
   password: { type: String },
   description: { type: String },
-  addressLineOne: { type: String, required: true },
-  addressLineTwo: { type: String, required: true },
-  city: { type: String, required: true },
-  postCode: { type: String, required: true }
+  addressLineOne: { type: String },
+  addressLineTwo: { type: String },
+  city: { type: String },
+  postCode: { type: String }
 });
 
 userSchema

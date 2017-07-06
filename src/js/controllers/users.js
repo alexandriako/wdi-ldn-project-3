@@ -19,7 +19,7 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth, $uibMo
 
   User.get($stateParams, (user)=>{
     vm.user = user;
-    vm.orders = Order.query({ createdBy: $stateParams.id });
+    // vm.orders = Order.query({ createdBy: $stateParams.id });
     vm.products = Product.query({ createdBy: user.id });
   });
 
@@ -44,6 +44,7 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth, $uibMo
       .$promise
       .then(() => {
         product.shipped = !product.shipped;
+        vm.orders = Order.query({ createdBy: $stateParams.id });
 
       });
   }
