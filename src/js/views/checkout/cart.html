@@ -97,7 +97,7 @@
   <script type="text/ng-template" id="template/ngCart/checkout.html">
 
     <div ng-if="service == 'log'">
-      <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
+      <button class="btn btn-primary" ng-transclude>Checkout</button>
     </div>
 
 
@@ -120,7 +120,7 @@
           <input name="image_url" type="hidden" value="http://localhost:1337/images/logo.png"/>
           <input name="bn" type="hidden" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest"/>
           <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_paynow_cc_144x47.png" type="image"/>
-          <!-- <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"/> -->
+
         </form>
 
     </div>

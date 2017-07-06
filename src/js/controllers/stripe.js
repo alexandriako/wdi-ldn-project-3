@@ -10,10 +10,10 @@ function StripeCtrl($http, ngCart) {
   var vm = this;
   vm.card = {};
   vm.payee = null;
-  vm.amount = ngCart.totalCost();
+  vm.amount = (ngCart.totalCost() - ngCart.getTax()).toFixed(2);
   vm.currency = 'gbp';
   vm.paymentSuccessful = false;
-  vm.total = ngCart.totalCost();
+  vm.total = (ngCart.totalCost() - ngCart.getTax()).toFixed(2);
 
   vm.pay = function pay() {
     Stripe.card.createToken(vm.card, (status, response) => {

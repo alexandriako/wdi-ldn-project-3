@@ -12,7 +12,6 @@ angular
 CartCtrl.$inject = ['$state', '$rootScope', 'ngCart'];
 
 function CartCtrl($state, $rootScope, ngCart) {
-
   ngCart.setTaxRate(20);
   ngCart.setShipping(4.99);
 }

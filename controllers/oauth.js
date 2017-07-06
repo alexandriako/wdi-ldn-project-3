@@ -30,12 +30,12 @@ function instagram(req, res, next) {
         }
         user.instagramId = token.user.id;
         user.image = token.user.profile_picture;
-        console.log(user);
+        // console.log(user);
         return user.save();
       });
   })
   .then((user) => {
-    console.log(user);
+    // console.log(user);
     const payload = { userId: user.id };
     const token = jwt.sign(payload, secret, { expiresIn: '1hr' });
 

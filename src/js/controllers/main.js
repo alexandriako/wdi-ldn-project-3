@@ -14,6 +14,9 @@ function MainCtrl($rootScope, $state, ngCart, $auth, $transitions) {
     if(err.status === 401) {
       if(vm.pageName !== 'login') vm.stateHasChanged = false;
       $state.go('login');
+    } else if(err.status === 404) {
+      vm.stateHasChanged = false;
+      $state.go('productsIndex');
     }
   });
 
