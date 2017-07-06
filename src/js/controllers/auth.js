@@ -46,12 +46,18 @@ function LoginCtrl($auth, $state, $rootScope, User) {
       .then((res) => {
         $rootScope.$broadcast('message', res.data.message);
         const userId = $auth.getPayload().userId;
-        const user = User.get({ id: userId });
-        if (!user.addressLineOne || !user.addressLineTwo || !user.postCode || !user.city) {
-          return $state.go('usersEdit', { id: userId });
-        } else {
-          $state.go('productsIndex');
-        }
+        User.get({ id: userId })
+          .$promise
+          .then((user) => {
+            console.log(user);
+            if (!user.addressLineOne || !user.addressLineTwo || !user.postCode || !user.city) {
+              console.log('something is not filled in', !user.addressLineOne, !user.addressLineTwo, !user.postCode, !user.city);
+              return $state.go('usersEdit', { id: userId });
+            } else {
+              $state.go('productsIndex');
+            }
+          });
+
       })
       .catch(() => $state.go('login'));
   }
