@@ -14,10 +14,9 @@ router.route('/products')
 .post(secureRoute, imageUpload, products.create);
 
 router.route('/products/:id')
-.all(secureRoute)
 .get(products.show)
-.put(imageUpload, products.update)
-.delete(products.delete);
+.put(secureRoute, imageUpload, products.update)
+.delete(secureRoute, products.delete);
 
 router.route('/users')
 .get(users.index);
