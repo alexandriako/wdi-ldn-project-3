@@ -4,8 +4,9 @@ angular
 .module('wabisabiApp')
 .controller('StripeCtrl', StripeCtrl);
 
-StripeCtrl.$inject = ['$http', 'ngCart' ];
-function StripeCtrl($http, ngCart ) {
+StripeCtrl.$inject = ['$http', 'ngCart'];
+function StripeCtrl($http, ngCart) {
+
   var vm = this;
   vm.card = {};
   vm.payee = null;
@@ -28,7 +29,11 @@ function StripeCtrl($http, ngCart ) {
           addressLineOne: 'blahblahblahblah',
           addressLineTwo: 'blahblahblahblah 2 2 2'
         };
+<<<<<<< HEAD
         // console.log('This is the token response ', response );
+=======
+
+>>>>>>> development
 
         $http
         .post('/api/payment', data)

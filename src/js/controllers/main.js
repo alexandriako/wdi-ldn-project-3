@@ -2,8 +2,8 @@ angular
   .module('wabisabiApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions'];
-function MainCtrl($rootScope, $state, $auth, $transitions) {
+MainCtrl.$inject = ['$rootScope', '$state', 'ngCart', '$auth', '$transitions'];
+function MainCtrl($rootScope, $state, ngCart, $auth, $transitions) {
   const vm = this;
   vm.isNavCollapsed = true;
 
@@ -33,6 +33,7 @@ function MainCtrl($rootScope, $state, $auth, $transitions) {
 
   function logout() {
     $auth.logout();
+    ngCart.empty(true);
     $state.go('login');
   }
 

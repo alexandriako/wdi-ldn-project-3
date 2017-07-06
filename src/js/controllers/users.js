@@ -19,7 +19,6 @@ function UsersShowCtrl(User, Product, Order, OrderProduct, $stateParams, $state,
     vm.user = user;
     vm.orders = Order.query({ createdBy: $stateParams.id });
     vm.products = Product.query({ createdBy: user.id });
-    console.log(vm.user);
   });
 
   function markAsShipped(order, product){
@@ -37,10 +36,12 @@ function UsersShowCtrl(User, Product, Order, OrderProduct, $stateParams, $state,
 
 
   function userDelete() {
-    $auth.logout();
     vm.user
     .$remove()
-    .then(() => $state.go('productsIndex'));
+    .then(() => {
+      $auth.logout();
+      $state.go('productsIndex');
+    });
   }
 
   vm.delete = userDelete;

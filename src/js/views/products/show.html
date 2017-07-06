@@ -9,8 +9,10 @@
 </div>
 
 <a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn btn-primary" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Edit</a>
-<button ng-click="productsShow.open()" class="btn btn-danger" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Delete</button>
 
+<button ng-click="productsShow.openModal()" class="btn btn-danger" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Delete</button>
+
+<!-- <button class="btn btn-danger" ng-click="birdsDelete.delete()">Delete</button> -->
 
 <div ng-controller="cartCtrl">
 
@@ -20,11 +22,12 @@
   </div>
   <hr />
 
-  <h3>Add to Cart</h3>
+
   <div class="row">
     <div class="col-xs-6 col-sm-3">
 
-      <ngcart-addtocart id="{{productsShow.product.id}}" name="{{productsShow.product.name}}" price="{{productsShow.product.price}}" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart>
+      <ngcart-addtocart id="{{productsShow.product.id}}" name="{{productsShow.product.name}}" price="{{productsShow.product.price}}" quantity="1" quantity-max="{{productsShow.product.quantity}}10">Add to Cart</ngcart-addtocart>
+
     </div>
   </div>
 
@@ -42,10 +45,17 @@
       ng-click="ngCart.addItem(id, name, price, q, data)"
       ng-transclude></a>
     </div>
-    <mark  ng-show="inCart()">
+    <mark ng-show="inCart()">
       This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+      <div class="cartPopup">
+        <h4>Cart:</h4>
+        <p>{{ ngCart.getTotalItems() }} items</p>
+        <p>Total Cost: {{ ngCart.totalCost() | currency: "£" }}</p>
+      </div>
     </mark>
   </div>
+
+
 </script>
 
 </div>

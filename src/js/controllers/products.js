@@ -7,14 +7,22 @@ angular
 .controller('ProductsDeleteCtrl', ProductsDeleteCtrl);
 
 
-ProductsIndexCtrl.$inject = ['Product'];
-function ProductsIndexCtrl(Product) {
+ProductsIndexCtrl.$inject = ['Product', 'Carousel'];
+function ProductsIndexCtrl(Product, Carousel) {
   const vm = this;
   vm.all = Product.query();
 
-  vm.myInterval = 5000;
-  vm.noWrapSlides = false;
-  vm.active = 0;
+  Carousel.query()
+    .$promise
+    .then(data =>{
+
+      vm.more = data;
+      vm.myInterval = 5000;
+      vm.noWrapSlides = false;
+      vm.active = 0;
+
+    });
+
 }
 
 
@@ -34,7 +42,7 @@ function ProductsNewCtrl(Product, $state) {
   vm.create = productsCreate;
 }
 
-ProductsShowCtrl.$inject = ['Product', '$stateParams', '$state', '$uibModal', '$http'];
+ProductsShowCtrl.$inject = ['Product', '$stateParams', '$state', '$http', '$uibModal'];
 function ProductsShowCtrl(Product, $stateParams, $state, $http, $uibModal) {
   const vm = this;
 
@@ -57,7 +65,7 @@ function ProductsShowCtrl(Product, $stateParams, $state, $http, $uibModal) {
     });
   }
 
-  vm.open = openModal;
+  vm.openModal = openModal;
 
 }
 
@@ -83,15 +91,17 @@ function ProductsDeleteCtrl($uibModalInstance, currentProduct, $state) {
 
   function closeModal() {
     $uibModalInstance.close();
+    console.log(currentProduct.createdBy.id);
   }
 
   vm.close = closeModal;
 
   function productsDelete() {
+
     vm.product
       .$remove()
       .then(() => {
-        $state.go('productsIndex');
+        $state.go( 'productsIndex' );
         $uibModalInstance.close();
       });
   }

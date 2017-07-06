@@ -3,6 +3,7 @@ const products = require('../controllers/products');
 const users = require('../controllers/user');
 const auth = require('../controllers/auth');
 const orders = require('../controllers/orders');
+const carousels = require('../controllers/carousels');
 const stripe = require('../controllers/stripe');
 const imageUpload = require('../lib/imageUpload');
 const secureRoute = require('../lib/secureRoute');
@@ -46,6 +47,12 @@ router.route('/login')
 
 router.route('/oauth/instagram')
   .post(oauth.instagram);
+
+router.route('/carousels')
+  .get(carousels.index);
+
+router.route('/carousels/:id')
+  .get(carousels.show);
 
 
 router.all('/*', (req, res) => res.notFound());
