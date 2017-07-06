@@ -83,9 +83,9 @@ function ProductsEditCtrl(Product, $stateParams, $state) {
   vm.update = productsUpdate;
 
   function productsUpdate() {
-    Product
-    .update({ id: $stateParams.id }, vm.product)
-    .$promise
+    vm.product.createdBy = vm.product.createdBy.id;
+    vm.product
+    .$update()
     .then(() => $state.go('productsShow', $stateParams));
   }
 }
@@ -97,7 +97,7 @@ function ProductsDeleteCtrl($uibModalInstance, currentProduct, $state) {
 
   function closeModal() {
     $uibModalInstance.close();
-    console.log(currentProduct.createdBy.id);
+    // console.log(currentProduct.createdBy.id);
   }
 
   vm.close = closeModal;

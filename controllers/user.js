@@ -34,7 +34,7 @@ function showRoute(req, res, next) {
 
 
 function updateRoute(req, res, next) {
-  console.log(req.file);
+  // console.log(req.file);
   if(req.file) req.body.image = req.file.filename;
 
   User

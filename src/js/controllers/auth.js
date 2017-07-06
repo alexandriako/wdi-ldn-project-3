@@ -41,7 +41,7 @@ function LoginCtrl($auth, $state, $rootScope) {
   vm.submit = submit;
 
   function authenticate(provider) {
-    console.log(provider);
+    // console.log(provider);
     $auth.authenticate(provider)
       .then((res) => {
         $rootScope.$broadcast('message', res.data.message);

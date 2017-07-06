@@ -38,7 +38,7 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth, $uibMo
 
 
   function markAsShipped(order, product){
-    console.log(order, product);
+    // console.log(order, product);
     OrderProduct
       .update({ orderId: order.id, id: product.id })
       .$promise
@@ -72,7 +72,7 @@ function UsersDeleteCtrl($uibModalInstance, currentUser, $state, $auth) {
 
   function closeModal() {
     $uibModalInstance.close();
-    console.log(currentUser.username);
+    // console.log(currentUser.username);
   }
 
   vm.close = closeModal;
