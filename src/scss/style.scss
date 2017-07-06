@@ -1,13 +1,37 @@
 // Import all of your scss files here
 @font-face {
-  font-family: 'Aqua';
-  src: url('../fonts/aqua.ttf');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'aqua_grotesqueregular';
+    src: url('/fonts/aqua-webfont.woff2') format('woff2'),
+         url('/fonts/aqua-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'komodaregular';
+    src: url('/fonts/komoda-webfont.woff2') format('woff2'),
+         url('/fonts/komoda-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'qontraregular';
+    src: url('/fonts/qontra-webfont.woff2') format('woff2'),
+         url('/fonts/qontra-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 * {
   font-family: 'Karla', sans-serif;
+}
+
+.image {
+  text-align: center;
 }
 
 .navbar {
@@ -15,17 +39,17 @@
   .navbar-header {
     a {
       margin: 30px auto;
-      font-size: 50px;
+      font-size: 75px;
+      letter-spacing: 4px;
     }
   }
   .navbar-brand {
-    font-family: 'Aqua';
-    font-size: 28px;
+    font-family: 'komodaregular';
   }
   ul {
     float: right;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     margin: 30px auto;
   }
 }
@@ -41,7 +65,12 @@
   margin: 30px auto;
   padding: 20px auto;
   .button {
-    margin: 0px 10px;
+    margin: 10px 10px;
+    border-radius: 2px;
+    color: white;
+    padding: 10px;
+    border: 2px solid;
+    font-size: 20px;
   }
 }
 
@@ -53,10 +82,33 @@
   .image {
     margin: 10px 20px;
     padding: 10px auto;
-    text-align: center;
     img {
       width: 100%;
     }
+  }
+  #a {
+    background-color: #cfe0e8;
+  }
+  #b {
+    background-color: #b7d7e8;
+  }
+  #c {
+    background-color: #87bdd8;
+  }
+  #d {
+    background-color: #daebe8;
+  }
+  #e {
+    background-color:  #c0ded9;
+  }
+  #f {
+    background-color: #96ceb4;
+  }
+  #g {
+    background-color: #77a8a8;
+  }
+  .search {
+    font-size: 20px;
   }
 }
 
@@ -64,10 +116,40 @@
   h2 {
     text-align: center;
   }
+  img {
+    width: 100%;
+  }
 }
 
-.image {
-  text-align: center;
+.new {
+  height: 100%;
+  h2 {
+    font-family: 'komodaregular';
+    border-style: solid;
+    text-align: center;
+  }
+  .section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.profile {
+    .image {
+      text-align: center;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 100%;
+    }
+}
+
+.cart {
+  .button {
+    text-align: center;
+  }
 }
 
 @media (max-width: 778px) {

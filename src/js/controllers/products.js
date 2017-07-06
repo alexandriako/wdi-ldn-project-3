@@ -79,16 +79,15 @@ function ProductsShowCtrl(Product, $stateParams, $state, $http, $uibModal) {
 ProductsEditCtrl.$inject = ['Product', '$stateParams', '$state'];
 function ProductsEditCtrl(Product, $stateParams, $state) {
   const vm = this;
-
   vm.product = Product.get($stateParams);
+  vm.update = productsUpdate;
 
   function productsUpdate() {
-    vm.product
-    .$update()
+    Product
+    .update({ id: $stateParams.id }, vm.product)
+    .$promise
     .then(() => $state.go('productsShow', $stateParams));
   }
-
-  vm.update = productsUpdate;
 }
 
 ProductsDeleteCtrl.$inject = ['$uibModalInstance', 'currentProduct', '$state'];

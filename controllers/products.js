@@ -34,6 +34,7 @@ function showRoute(req, res, next) {
 
 function updateRoute(req, res, next) {
   if(req.file) req.body.image = req.file.filename;
+
   Product
   .findById(req.params.id)
   .exec()
@@ -49,6 +50,8 @@ function updateRoute(req, res, next) {
   .then((product) => res.json(product))
   .catch(next);
 }
+
+
 
 function deleteRoute(req, res, next) {
   Product
