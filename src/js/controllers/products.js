@@ -12,16 +12,23 @@ function ProductsIndexCtrl(Product, Carousel) {
   const vm = this;
   vm.all = Product.query();
 
+  function setCategory(category) {
+    vm.category = category;
+    vm.q = '';
+  }
+
+  vm.setCategory = setCategory;
+
   Carousel.query()
-    .$promise
-    .then(data =>{
+  .$promise
+  .then(data =>{
 
-      vm.more = data;
-      vm.myInterval = 5000;
-      vm.noWrapSlides = false;
-      vm.active = 0;
+    vm.more = data;
+    vm.myInterval = 5000;
+    vm.noWrapSlides = false;
+    vm.active = 0;
 
-    });
+  });
 
 }
 
@@ -34,9 +41,9 @@ function ProductsNewCtrl(Product, $state) {
   function productsCreate() {
     if(vm.newForm.$valid) {
       Product
-        .save(vm.product)
-        .$promise
-        .then(() => $state.go('productsIndex'));
+      .save(vm.product)
+      .$promise
+      .then(() => $state.go('productsIndex'));
     }
   }
   vm.create = productsCreate;
@@ -96,14 +103,17 @@ function ProductsDeleteCtrl($uibModalInstance, currentProduct, $state) {
 
   vm.close = closeModal;
 
+
   function productsDelete() {
 
     vm.product
-      .$remove()
-      .then(() => {
-        $state.go( 'productsIndex' );
-        $uibModalInstance.close();
-      });
+    .$remove()
+    .then(() => {
+
+      $state.go( 'productsIndex' );
+
+      $uibModalInstance.close();
+    });
   }
 
   vm.delete = productsDelete;
