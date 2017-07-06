@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <div class="login">
-  <div>
     <h2>Log in</h2>
     <form name="login.loginForm" ng-submit="login.submit()" novalidate>
-      <div>
+      <div class="section">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="login.credentials.email" required>
         <div ng-messages="login.loginForm.email.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.email.$touched) && login.loginForm.email.$invalid" class="error">
@@ -11,7 +10,7 @@
           <div ng-message="email">This field must be a valid email address.</div>
         </div>
       </div>
-      <div>
+      <div class="section">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ng-model="login.credentials.password" required>
         <div ng-messages="login.loginForm.password.$error" role="alert" ng-show="(login.loginForm.$submitted || login.loginForm.password.$touched) && login.loginForm.password.$invalid" class="error">
@@ -21,11 +20,6 @@
 
       <button class="button">Login</button>
 
-      <hr>
-
     </form>
-
-    <span><ng-md-icon icon="login" style="fill: purple" size="40"></ng-md-icon></span><button ng-click="login.authenticate('instagram')">Login with Instagram</button>
-
-  </div>
+    <div id="instagram"><span><ng-md-icon icon="login" style="fill: purple" size="35"></ng-md-icon></span><button ng-click="login.authenticate('instagram')">Login with Instagram</button></div>
 </div>

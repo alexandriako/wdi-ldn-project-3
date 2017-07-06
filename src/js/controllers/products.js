@@ -78,12 +78,14 @@ function ProductsShowCtrl(Product, $stateParams, $state, $http, $uibModal) {
 
 ProductsEditCtrl.$inject = ['Product', '$stateParams', '$state'];
 function ProductsEditCtrl(Product, $stateParams, $state) {
+
   const vm = this;
+  vm.product.createdBy.id = vm.product.createdBy._id;
   vm.product = Product.get($stateParams);
   vm.update = productsUpdate;
 
   function productsUpdate() {
-    vm.product.createdBy = vm.product.createdBy.id;
+
     vm.product
     .$update()
     .then(() => $state.go('productsShow', $stateParams));
