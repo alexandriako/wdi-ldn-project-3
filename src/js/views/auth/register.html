@@ -33,6 +33,15 @@
         <div ng-message="required">Please enter a value for this field.</div>
       </div>
     </div>
+    <div>
+      <label for="image">Image</label>
+      <input base64 type="file" name="image" id="image" ng-model="register.user.base64" required>
+      <div ng-messages="register.registerForm.base64.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.base64.$touched) && register.registerForm.base64.$invalid" class="error">
+        <div ng-message="required">Please enter a value for this field.</div>
+      </div>
+
+      <!-- <img ng-src="{{ usersRegister.user.base64 }}"> -->
+    </div>
 
 
       <button class="button">Register</button>
