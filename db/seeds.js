@@ -130,7 +130,15 @@ User
       image: '/images/indigo-pillow.png',
       description: 'Crafted from recycled African fabrics, this mudcloth pillow is handmade in my studio in Los Angeles. Each pillow is unique looking due to the nature of the fabric and comes with a pillow insert. Quantity is very limited.',
       createdBy: users[1]
-    },{
+    }, {
+      name: 'Mark Davis',
+      category: 'Home & Living',
+      price: 5,
+      quantity: 1,
+      image: '/images/mark.jpg',
+      description: 'A one of a kind find.',
+      createdBy: users[1]
+    }, {
       name: 'Turtle Baby Rattle Toy',
       category: 'Kids',
       price: 10,
