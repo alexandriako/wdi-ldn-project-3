@@ -7,9 +7,9 @@
   <h4>{{ productsShow.product.category }}</h4>
   <p> {{ productsShow.product.description }} </p>
 
-  <a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn btn-primary" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Edit</a>
+  <a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Edit</a>
 
-  <button ng-click="productsShow.openModal()" class="btn btn-danger" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Delete</button>
+  <button ng-click="productsShow.openModal()" class="btn" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Delete</button>
 </div>
 
 <hr/>

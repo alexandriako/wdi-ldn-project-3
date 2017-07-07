@@ -137,6 +137,15 @@
   img {
     width: 100%;
   }
+  .btn {
+    margin: 10px 10px;
+    border-radius: 2px;
+    color: white;
+    padding: 5px;
+    border: 2px solid;
+    font-size: 18px;
+    background-color: grey;
+  }
 }
 
 .new {
@@ -184,12 +193,11 @@
     text-align: left;
   }
   .button {
-    margin: 30px;
     margin: 10px 10px;
     border-radius: 2px;
     color: white;
     padding: 5px;
-    border: 2px solid shadow;
+    border: 2px solid;
     font-size: 18px;
   }
   #instagram {
@@ -227,12 +235,11 @@
     margin-bottom: 30px;
   }
   .button {
-    margin: 30px;
     margin: 10px 10px;
     border-radius: 2px;
     color: white;
     padding: 5px;
-    border: 2px solid shadow;
+    border: 2px solid;
     font-size: 18px;
   }
   #image {
@@ -241,7 +248,6 @@
     border-radius: 2px;
     color: white;
     padding: 5px;
-    border: 2px solid shadow;
     font-size: 18px;
   }
 }
@@ -258,6 +264,23 @@
     img {
       width: 100%;
       max-height: 750px !important;
+    }
+    button {
+      margin: 10px 10px;
+      border-radius: 2px;
+      color: white;
+      padding: 5px;
+      border: 2px solid;
+      font-size: 18px;
+    }
+    .btn {
+      margin: 10px 10px;
+      border-radius: 2px;
+      color: white;
+      padding: 5px;
+      border: 2px solid;
+      font-size: 18px;
+      background-color: grey;
     }
 }
 

@@ -19,6 +19,7 @@ function createRoute(req, res, next) {
   .catch(next);
 }
 
+
 function showRoute(req, res, next) {
   Product
   .findById(req.params.id)
