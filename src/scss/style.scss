@@ -80,7 +80,6 @@
     background-color: white;
     border-style: none;
     // padding: 2px;
-    border-bottom: solid;
     // border-shadow: none;
     // border-top: none;
     // border-left: none;
@@ -89,7 +88,7 @@
     color: grey;
   }
   button:hover, button:focus {
-    border-bottom: solid red;
+    border-bottom: ridge rgb(155, 35, 53);
     }
 }
 
@@ -187,6 +186,8 @@
   h2 {
     text-align: center;
     font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: ridge rgb(155, 35, 53);
   }
   .section {
     margin-top: 30px;
@@ -229,6 +230,8 @@
   }
   h2 {
     font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: ridge rgb(155, 35, 53);
   }
   .section {
     text-align: left;
