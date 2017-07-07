@@ -12,7 +12,6 @@
         <input type="hidden" name="_method" value="DELETE">
         <button class="btn" ng-click="usersShow.openModal()" ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id">Delete Account</button>
       </form>
-      <a ui-sref="productsNew" ng-if="main.isAuthenticated() && usersShow.user.id"><button class="btn btnNew">Sell</button></a>
 
     </div>
   </div>
