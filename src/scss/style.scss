@@ -47,6 +47,7 @@
   }
   .navbar-brand {
     font-family: 'komodaregular';
+    color: rgb(155, 35, 53);
   }
   ul {
     float: right;
@@ -88,7 +89,7 @@
     color: grey;
   }
   button:hover, button:focus {
-  border-bottom: solid red;
+    border-bottom: solid red;
     }
 }
 
