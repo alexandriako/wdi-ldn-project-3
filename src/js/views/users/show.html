@@ -2,7 +2,7 @@
 
 <div class="profile">
   <div class="row">
-    <div class="user" >
+    <div class="user">
 
       <div class="image"><img class="img-responsive" ng-src="{{ usersShow.user.imageSRC }}"></div>
       <h2 class="title">{{ usersShow.user.username }}</h2>
@@ -15,55 +15,53 @@
       <a ui-sref="productsNew" ng-if="main.isAuthenticated() && usersShow.user.id"><button class="btn btnNew">Sell</button></a>
 
     </div>
-
-    <hr>
-
-
-    <div class="row">
-      <div class="ordersOut col-lg-4">
-        <h2>Outgoing Orders</h2>
-        <div ng-repeat="order in usersShow.user.outgoingOrders">
-          <p> Transaction Id: <span>{{ order.transactionId }}</span></p>
-          <div ng-repeat="product in order.products">
-            <p> Product: <span>{{ product.product.name }}</span></p>
-            <div ng-if="product.shipped === true">
+  </div>
+  <hr>
+  <div class="row">
+    <div class="ordersOut col-lg-4">
+      <h2>Outgoing Orders</h2>
+      <div ng-repeat="order in usersShow.user.outgoingOrders">
+        <p> Transaction Id: <span>{{ order.transactionId }}</span></p>
+        <div ng-repeat="product in order.products">
+          <p> Product: <span>{{ product.product.name }}</span></p>
+          <div ng-if="product.shipped">
             <p>Shipped: &#10004;</p>
-            <div ng-if="product.shipped === false">
-            <p>Shipped: &#10008;</p></div>
+          </div>
+          <div ng-if="!product.shipped">
+            <p>Shipped: &#10008;</p>
           </div>
         </div>
+      </div>
+    </div>
 
-
-      <div class="ordersIn col-lg-4">
-        <h2>Incoming Orders</h2>
-        <div ng-repeat="order in usersShow.user.incomingOrders">
-          <p> Transaction Id: {{ order.transactionId }}</p>
-          <h5> Shipping Address </h5>
-          <p>{{ order.createdBy.addressLineOne }}, {{ order.createdBy.addressLineTwo }}, {{ order.createdBy.city }}, {{ order.createdBy.postCode }} </p>
-          <p> <span> </span></p>
-          <p> <span>  </span></p>
-          <p> <span>  </span></p>
-          <div ng-repeat="product in order.products">
-            <p> Product: {{ product.product.name }}</p>
-            <div ng-if="product.shipped === true">
-            <p>Shipped: &#10004;</p></div>
-            <div ng-if="product.shipped === false">
-            <p>Shipped: &#10008;</p></div>
-            <input type="checkbox" ng-click="usersShow.markAsShipped(order, product)">
+    <div class="ordersIn col-lg-4">
+      <h2>Incoming Orders</h2>
+      <div ng-repeat="order in usersShow.user.incomingOrders">
+        <p> Transaction Id: {{ order.transactionId }}</p>
+        <h5> Shipping Address </h5>
+        <p>{{ order.createdBy.addressLineOne }}, {{ order.createdBy.addressLineTwo }}, {{ order.createdBy.city }}, {{ order.createdBy.postCode }} </p>
+        <p> <span> </span></p>
+        <p> <span>  </span></p>
+        <p> <span>  </span></p>
+        <div ng-repeat="product in order.products">
+          <p> Product: {{ product.product.name }}</p>
+          <div ng-if="product.shipped">
+            <p>Shipped: &#10004;</p>
           </div>
+          <div ng-if="!product.shipped">
+            <p>Shipped: &#10008;</p>
+          </div>
+          <input type="checkbox" ng-click="usersShow.markAsShipped(order, product)">
         </div>
       </div>
     </div>
   </div>
 
-    <hr>
+  <hr>
 
-    <div class="row col-lg-12">
-      <div ng-repeat="product in usersShow.products" class="col-lg-4 col-md-6 col-sm-12">
-        <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC }}" class="img-responsive"></a></div>
-      </div>
+  <div class="row">
+    <div ng-repeat="product in usersShow.products" class="col-lg-4 col-md-6 col-sm-12">
+      <div class="image"><a ui-sref="productsShow({ id: product.id })"><img ng-src="{{ product.imageSRC }}" class="img-responsive"></a></div>
     </div>
   </div>
-
-</div>
 </div>
