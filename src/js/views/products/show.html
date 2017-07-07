@@ -6,56 +6,40 @@
   <a ui-sref="usersShow({ id: productsShow.product.createdBy.id })"><h4>{{ productsShow.product.createdBy.username }}</h4></a>
   <h4>{{ productsShow.product.category }}</h4>
   <p> {{ productsShow.product.description }} </p>
+
+  <a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn btn-primary" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Edit</a>
+
+  <button ng-click="productsShow.openModal()" class="btn btn-danger" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Delete</button>
 </div>
 
-<a ui-sref="productsEdit({ id: productsShow.product.id })" class="btn btn-primary" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Edit</a>
+<hr/>
 
-<button ng-click="productsShow.openModal()" class="btn btn-danger" ng-if="main.isAuthenticated() && main.currentUserId === productsShow.product.createdBy.id">Delete</button>
-
-<!-- <button class="btn btn-danger" ng-click="birdsDelete.delete()">Delete</button> -->
-
-<div ng-controller="cartCtrl">
-
-  <div class="row">
-
-
-  </div>
-  <hr />
-
-
-  <div class="row">
-    <div class="col-xs-6 col-sm-3">
-
-      <ngcart-addtocart id="{{productsShow.product.id}}" name="{{productsShow.product.name}}" price="{{productsShow.product.price}}" quantity="1" quantity-max="{{productsShow.product.quantity}}10">Add to Cart</ngcart-addtocart>
-
-    </div>
-  </div>
-
-  <script type="text/ng-template" id="template/ngCart/addtocart.html"><div ng-hide="attrs.id">
-    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
-
-  </div>
-  <div ng-show="attrs.id">
-    <div>
-      <span ng-show="quantityMax">
-        <select name="quantity" id="quantity" ng-model="q"
-        ng-options=" v for v in qtyOpt"></select>
-      </span>
-      <a class="btn btn-sm btn-primary"
-      ng-click="ngCart.addItem(id, name, price, q, data)"
-      ng-transclude></a>
-    </div>
-    <mark ng-show="inCart()">
-      This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
-      <div class="cartPopup">
-        <h4>Cart:</h4>
-        <p>{{ ngCart.getTotalItems() }} items</p>
-        <p>Total Cost: {{ ngCart.totalCost() | currency: "£" }}</p>
+<div id="product" ng-controller="cartCtrl">
+    <div class="row">
+      <div class="col-xs-6 col-sm-3">
+        <ngcart-addtocart id="{{productsShow.product.id}}" name="{{productsShow.product.name}}" price="{{productsShow.product.price}}" quantity="1" quantity-max="{{productsShow.product.quantity}}10">Add to Cart</ngcart-addtocart>
       </div>
-    </mark>
-  </div>
-
-
-</script>
-
+    </div>
+    <script type="text/ng-template" id="template/ngCart/addtocart.html">
+      <div ng-hide="attrs.id"><a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a></div>
+    <div ng-show="attrs.id">
+      <div>
+        <span ng-show="quantityMax">
+          <select name="quantity" id="quantity" ng-model="q"
+          ng-options=" v for v in qtyOpt"></select>
+        </span>
+        <a class="btn btn-sm btn-primary"
+        ng-click="ngCart.addItem(id, name, price, q, data)"
+        ng-transclude></a>
+      </div>
+      <mark ng-show="inCart()">
+        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+        <div class="cartPopup">
+          <h4>Cart:</h4>
+          <p>{{ ngCart.getTotalItems() }} items</p>
+          <p>Total Cost: {{ ngCart.totalCost() | currency: "£" }}</p>
+        </div>
+      </mark>
+    </div>
+  </script>
 </div>

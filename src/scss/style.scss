@@ -28,6 +28,7 @@
 
 * {
   font-family: 'Karla', sans-serif;
+  outline: none;
 }
 
 
@@ -52,27 +53,43 @@
     text-align: center;
     font-size: 20px;
     margin: 30px auto;
+    li:hover, li:focus {
+    font-weight: bold;
+      }
   }
 }
 
 .carousel {
-
+  width:100%;
+  .carousel-inner {
+    width:100%;
+    max-height: 450px !important;
+  }
   img {
     width: 100%;
-}
+  }
 }
 
 #filters {
-  margin: 30px auto;
+  margin: 35px auto;
   padding: 20px auto;
   .button {
     margin: 10px 10px;
-    border-radius: 2px;
-    color: white;
-    padding: 10px;
-    border: 2px solid;
+    // border-radius: 2px;
+    background-color: white;
+    border-style: none;
+    // padding: 2px;
+    border-bottom: solid;
+    // border-shadow: none;
+    // border-top: none;
+    // border-left: none;
+    // border-right: none;
     font-size: 20px;
+    color: grey;
   }
+  button:hover, button:focus {
+  border-bottom: solid red;
+    }
 }
 
 .index {
@@ -87,27 +104,27 @@
       width: 100%;
     }
   }
-  #a {
-    background-color: #cfe0e8;
-  }
-  #b {
-    background-color: #b7d7e8;
-  }
-  #c {
-    background-color: #87bdd8;
-  }
-  #d {
-    background-color: #daebe8;
-  }
-  #e {
-    background-color:  #c0ded9;
-  }
-  #f {
-    background-color: #96ceb4;
-  }
-  #g {
-    background-color: #77a8a8;
-  }
+  // #a {
+  //   background-color: #cfe0e8;
+  // }
+  // #b {
+  //   background-color: #b7d7e8;
+  // }
+  // #c {
+  //   background-color: #87bdd8;
+  // }
+  // #d {
+  //   background-color: #daebe8;
+  // }
+  // #e {
+  //   background-color:  #c0ded9;
+  // }
+  // #f {
+  //   background-color: #96ceb4;
+  // }
+  // #g {
+  //   background-color: #77a8a8;
+  // }
   .search {
     font-size: 20px;
   }
@@ -124,15 +141,20 @@
 
 .new {
   height: 100%;
+  width: 50%;
+  text-align: center;
+  margin: 10px auto;
   h2 {
-    font-family: 'komodaregular';
-    border-style: solid;
     text-align: center;
     font-size: 30px;
+  }
+  input {
+    width: 100%;
   }
   .section {
     margin-top: 30px;
     margin-bottom: 30px;
+    text-align: left;
   }
   .button {
     margin: 10px 10px;
@@ -146,6 +168,12 @@
 
 .login {
   height: 100%;
+  width: 50%;
+  text-align: center;
+  margin: 10px auto;
+  input {
+    width: 100%;
+  }
   h2 {
     text-align: center;
     font-size: 30px;
@@ -153,6 +181,7 @@
   .section {
     margin-top: 30px;
     margin-bottom: 30px;
+    text-align: left;
   }
   .button {
     margin: 30px;
@@ -169,21 +198,31 @@
       margin: 30px;
       margin: 10px 10px;
       border-radius: 2px;
-      color: white;
+      color: black;
+      background-color: white;
+      border: none;
       padding: 5px;
-      border: 2px solid shadow;
       font-size: 18px;
     }
+    button:hover, button:focus {
+    text-decoration:underline;
+      }
   }
 }
 
 .register {
   height: 100%;
+  width: 50%;
   text-align: center;
+  margin: 10px auto;
+  input {
+    width: 100%;
+  }
   h2 {
     font-size: 30px;
   }
   .section {
+    text-align: left;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -209,13 +248,16 @@
 
 .profile {
     .image {
-      text-align: center;
-      width: 100%;
+      width:100%;
+      // max-height: 200px !important;
+      // text-align: center;
+      // width: 100%;
       margin-top: 10px;
       margin-bottom: 10px;
     }
     img {
       width: 100%;
+      max-height: 750px !important;
     }
 }
 
@@ -225,6 +267,15 @@
 
   }
 }
+
+.ordersIn, .ordersOut {
+  height: 400px;
+  overflow: scroll;
+  h2 {
+    position: static;
+  }
+}
+
 
 @media (max-width: 778px) {
     .navbar {

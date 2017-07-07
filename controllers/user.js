@@ -25,7 +25,7 @@ function showRoute(req, res, next) {
     .fill('incomingOrders')
     .exec()
     .then((user) => {
-      if(!user) return res.notFound();
+      // if(!user) return res.notFound();
 
       res.json(user);
     })
