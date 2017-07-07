@@ -2,7 +2,9 @@
 <div class="carousel" uib-carousel active="productsIndex.active" interval="productsIndex.myInterval" no-wrap="productsIndex.noWrapSlides">
 
   <div uib-slide ng-repeat="carousel in productsIndex.more" index="$index" class="carouselContain">
-    <img ng-src="{{ carousel.image}}" class="img-responsive">
+    <div class="carousel-inner">
+      <img ng-src="{{ carousel.image}}" class="img-responsive">
+    </div>
   </div>
 </div>
 <div class="row index">

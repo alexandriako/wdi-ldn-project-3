@@ -49,6 +49,7 @@ function UsersShowCtrl(User, Product, Order, $stateParams, $state, $auth, $uibMo
       });
   }
   vm.markAsShipped = markAsShipped;
+
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<div class="profile container">
+<div class="profile">
   <div class="row">
     <div class="user" >
-      <div class="image"><img class="img-responsive" ng-src="{{ usersShow.user.imageSRC }}"></div>
 
+      <div class="image"><img class="img-responsive" ng-src="{{ usersShow.user.imageSRC }}"></div>
       <h2 class="title">{{ usersShow.user.username }}</h2>
       <p>{{ usersShow.user.description }}</p>
       <form>
@@ -23,16 +23,13 @@
       <div class="ordersOut col-lg-4">
         <h2>Outgoing Orders</h2>
         <div ng-repeat="order in usersShow.user.outgoingOrders">
-            <p> Transaction Id: <span>{{ order.transactionId }}</span></p>
-            <div ng-repeat="product in order.products">
-              <p> Product: <span>{{ product.product.name }}</span></p>
-              <div ng-if="product.shipped === true">
-                <p>Shipped: &#10004;</p>
-              </div>
-              <div ng-if="product.shipped === false">
-              <p>Shipped: &#10008;</p>
-              </div>
-            </div>
+          <p> Transaction Id: <span>{{ order.transactionId }}</span></p>
+          <div ng-repeat="product in order.products">
+            <p> Product: <span>{{ product.product.name }}</span></p>
+            <div ng-if="product.shipped === true">
+            <p>Shipped: &#10004;</p>
+            <div ng-if="product.shipped === false">
+            <p>Shipped: &#10008;</p></div>
           </div>
         </div>
 

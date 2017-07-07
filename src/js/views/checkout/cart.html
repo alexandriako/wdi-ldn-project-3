@@ -13,8 +13,9 @@
         <ngcart-checkout service="paypal" settings="payPalSettings"></ngcart-checkout>
       </div>
       <div class="col-xs-4">
-        <ngcart-checkout service="log" ui-sref="payment">Checkout</ngcart-checkout>
+        <ngcart-checkout service="log" ui-sref="payment" ng-if="main.profileComplete">Checkout</ngcart-checkout>
       </div>
+      <button ng-if="!main.profileComplete" ui-sref="usersEdit({id: main.currentUserId })">Add address</button>
 
     </div>
   </div>

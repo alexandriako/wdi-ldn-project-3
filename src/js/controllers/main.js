@@ -2,8 +2,8 @@ angular
   .module('wabisabiApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', 'ngCart', '$auth', '$transitions'];
-function MainCtrl($rootScope, $state, ngCart, $auth, $transitions) {
+MainCtrl.$inject = ['$rootScope', '$state', 'ngCart', '$auth', '$transitions', 'User'];
+function MainCtrl($rootScope, $state, ngCart, $auth, $transitions, User) {
   const vm = this;
   vm.isNavCollapsed = true;
 
@@ -31,8 +31,20 @@ function MainCtrl($rootScope, $state, ngCart, $auth, $transitions) {
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     vm.isNavCollapsed = true;
 
-    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
+    if($auth.getPayload()) {
+      vm.currentUserId = $auth.getPayload().userId;
+      User.get({ id: vm.currentUserId })
+        .$promise
+        .then((user) => {
+          vm.currentUser = user;
+          vm.profileComplete = checkProfileComplete();
+        });
+    }
   });
+
+  function checkProfileComplete() {
+    return !!vm.currentUser.addressLineOne && !!vm.currentUser.addressLineTwo && !!vm.currentUser.postCode && !!vm.currentUser.city;
+  }
 
   function logout() {
     $auth.logout();

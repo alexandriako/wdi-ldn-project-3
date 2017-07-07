@@ -75,8 +75,8 @@
       </div>
 
       <div class="section">
-        <label for="image">Image</label>
-        <input base64 type="file" name="image" id="image" ng-model="register.user.base64" required>
+        <div><label for="image">Image</label>
+        <input base64 type="file" name="image" id="image" ng-model="register.user.base64" required></div>
         <div ng-messages="register.registerForm.base64.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.base64.$touched) && register.registerForm.base64.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
