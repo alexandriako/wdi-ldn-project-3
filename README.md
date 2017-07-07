@@ -20,20 +20,19 @@
 
  Wabi Sabi is an app that allows users to login or register through our website or through instagram oauth. Users can edit their profile, post products to sell, receive orders from other users, and place orders themselves. We utilized Stripe for the payment system, ngCart for storing items to be ordered and checking out, and we created custom order and product schemas for everything else.
 
- ![Homepage](src/assets/images/readmeHome.png)
+ ![Homepage](http://imgur.com/8Cyut95)
 
  The app requires registration or logging in to access product and user content. Users can choose to login with Instagram or through our app. Additionally, once a user is verified they can post content and start placing orders.
 
- ![Profile example](src/assets/images/readmeProfile.png)
+ ![Profile example](http://imgur.com/qEpXkAM)
 
  Posting products is easy. Users can upload images through amazon-web-services. Only the owner of a profile our product can edit or delete them..
 
- ![Posts](src/assets/images/readmePosts.png)
- ![Posting](src/assets/images/readmePost.png)
+ ![Posts](http://imgur.com/0SnmGlU)
 
- Additionally.
+ ![Posts](http://imgur.com/ShTnFlT)
 
- ![APIs](src/assets/images/readmeAPIs.png)
+ ![Stripe](http://imgur.com/eLvghIa)
 
 
  ### Technologies used
@@ -58,6 +57,8 @@
  - Trello
  - Git & github
  - Heroku
+
+ ![Wireframe](http://imgur.com/Dc9Bl7k)
 
  Oauth and bcrypt are used for user registration and login and Instagram is available as login options. The Stripe API is installed to process payments.
 
