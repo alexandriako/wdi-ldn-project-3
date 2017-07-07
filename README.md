@@ -18,7 +18,7 @@
  ### A short description
 
 
- Wabi Sabi is an app that allows users to login or register through our website or through instagram oauth. Users can edit their profile, post products to sell, receive orders from other users, and place orders themselves. We utilized Stripe for the payment system, ng-cart for storing items to be ordered and checking out, and we created custom order and product schemas for everything else.
+ Wabi Sabi is an app that allows users to login or register through our website or through instagram oauth. Users can edit their profile, post products to sell, receive orders from other users, and place orders themselves. We utilized Stripe for the payment system, ngCart for storing items to be ordered and checking out, and we created custom order and product schemas for everything else.
 
  ![Homepage](src/assets/images/readmeHome.png)
 
@@ -43,12 +43,14 @@
  - HTML 5
  - SCSS
  - Bootstrap
- - Angular
+ - Angular (ngMessages, ngCart, ui.router, ui.bootstrap, ngAnimate, ngResource, ngMdIcons)
  - Gulp
  - Yarn
  - NPM
  - JWOT
  - Bcrypt
+ - Balsamiq
+ - Imgur
  - Satellizer
  - Amazon Web Services
  - Oauth: Instagram
@@ -61,17 +63,17 @@
 
  ### Challenges faced
 
-
+The biggest challenges were handling the three major components of our app: ngCart, stripe, and the order schema. Luckily, we split up the work and tackled it within the first half of the week. We also had difficulties with merging as a group due to personal errors and mistakes.
 
  ### Rounding it off
 
  For improvements we'd like to:
 
- - Increase the Shopstyle API categories displaced for each location
- - Display posts made by a user under their profile page
- - Allow users to create their own list for shopping items
- - Allow users to create their own lists for cities
- - Include Facebook and Twitter login options
- - Improve the design
+ -Have the stock quantity decrease through orders and users can increase stock manually
+ -Have addresses inputted through Google Maps and ngCart calculate shipping cost with this data
+ -Have a wishlist for users that they can add to by liking an item
+ -Allow a seller and buyer to directly contact each other
+ -Preserve order history on the profile pages
+ -Set image sizing manually on website to prevent styling issues
 
- Interested in following our future projects? Link with us on [Github](https://github.com/alexandriako).
+ Interested in following our future projects? Link with us on [Github](https://github.com/alexandriako), https://github.com/jasontrk, https://github.com/mikejdegroot.
