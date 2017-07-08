@@ -24,15 +24,17 @@
 
  The app requires registration or logging in to access product and user content. Users can choose to login with Instagram or through our app. Additionally, once a user is verified they can post content and start placing orders.
 
- ![Profile example](http://imgur.com/qEpXkAM)
+ ![Profile example](http://i.imgur.com/0SnmGlU.png)
 
  Posting products is easy. Users can upload images through amazon-web-services. Only the owner of a profile our product can edit or delete them..
 
- ![Posts](http://imgur.com/0SnmGlU)
+ ![Posts](http://i.imgur.com/ShTnFlT.png)
 
- ![Posts](http://imgur.com/ShTnFlT)
+ ![Posts](http://i.imgur.com/qEpXkAM.png)
 
- ![Stripe](http://imgur.com/eLvghIa)
+ ![ngCart](http://i.imgur.com/eLvghIa.png)
+
+ ![Stripe](http://i.imgur.com/XrglUEu.png)
 
 
  ### Technologies used
@@ -58,7 +60,7 @@
  - Git & github
  - Heroku
 
- ![Wireframe](http://imgur.com/Dc9Bl7k)
+ ![Wireframe](http://i.imgur.com/Dc9Bl7k.png)
 
  Oauth and bcrypt are used for user registration and login and Instagram is available as login options. The Stripe API is installed to process payments.
 
