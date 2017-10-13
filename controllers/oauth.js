@@ -11,7 +11,7 @@ function instagram(req, res, next) {
     form: {
       client_id: oauth.instagram.clientId,
       client_secret: oauth.instagram.clientSecret,
-      redirect_uri: 'https://wdi-27-honeypot.herokuapp.com',
+      redirect_uri: 'https://wabi-sabi.herokuapp.com',
       grant_type: 'authorization_code',
       code: req.body.code
     },
